@@ -1,4 +1,4 @@
-# NijiCalculator
+# Niji's Calculator
 
 A simple calculator written in C#.
 
