@@ -51,7 +51,7 @@ namespace NijiCalculator {
                 long y = 0;
                 double yDivide = 0.000000000000000;
                 // This controls whether or not the DividedByZero code runs.
-                bool modeDivideMod = false;
+                bool divideByZero = false;
                 Console.WriteLine("What operation would you like to perform?");
                 Console.WriteLine("Your current options are:");
                 // List of available operations
@@ -120,7 +120,7 @@ namespace NijiCalculator {
                     yDivide = convenience.InputDouble();
                     // Check if the divisor is 0
                     if (yDivide == 0) {
-                        modeDivideMod = true;
+                        divideByZero = true;
                         // You destroyed the universe...
                         Console.WriteLine("WARNING! USER ATTEMPTED TO DIVIDE BY ZERO!");
                         Console.WriteLine("...");
@@ -146,7 +146,7 @@ namespace NijiCalculator {
                     y = convenience.Input64BitInteger();
                     // Check if the divisor is 0
                     if (y == 0) {
-                        modeDivideMod = true;
+                        divideByZero = true;
                         // You destroyed the universe...
                         Console.WriteLine("WARNING! USER ATTEMPTED TO DIVIDE BY ZERO!");
                         Console.WriteLine("...");
@@ -167,7 +167,7 @@ namespace NijiCalculator {
                     Console.WriteLine(operations[0, 7]); // #@%$!
                 }
                 DividedByZero:
-                    if (modeDivideMod == true) {
+                    if (divideByZero == true) {
                         Console.WriteLine("*ugh*");
                         Console.WriteLine("I'll restore the universe back to how it was.");
                         Console.WriteLine("Next time, DON'T DIVIDE BY ZERO!");
