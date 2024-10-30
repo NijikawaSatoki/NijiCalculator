@@ -9,7 +9,7 @@ It can do addition, subtraction, multiplication, division, and modulus.
 
 ## To-Do
 
-- [ ] Maybe wrap the maths operations into their functions? ¯\\\_(ツ)_/¯
+- [x] Maybe wrap the maths operations into their functions? ¯\\\_(ツ)_/¯
 
 ## Possible Future Additions
 
