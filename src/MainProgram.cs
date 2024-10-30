@@ -39,6 +39,7 @@ namespace NijiCalculator {
             };
             // Objects
             Convenience convenience = new Convenience(); // ./NijiConvenience/Convenience.cs
+            Calculate calculate = new Calculate(); // ./NijiCalculator/Calculate.cs
             // Introduction
             Console.WriteLine($"{SINGLE_TAB}\"Niji's Calculator\"");
             Console.WriteLine($"{DOUBLE_TAB}By Niji System");
@@ -73,7 +74,7 @@ namespace NijiCalculator {
                     Console.Write("Please enter a second number (again, no decimals please): ");
                     y = convenience.Input64BitInteger();
                     // Calculate the sum
-                    sum = x + y;
+                    sum = calculate.Add(x, y);
                     Console.WriteLine($"Your sum is {sum}.");
                 } else if (operation == operations[0, 1] || operation == operations[1, 1] || operation == operations[2, 1]) {
                     /* <3 `Subtraction' <3 */
@@ -88,7 +89,7 @@ namespace NijiCalculator {
                     Console.Write("Please enter the amount to take away (again, no decimals please): ");
                     y = convenience.Input64BitInteger();
                     // Calculate the difference
-                    difference = x - y;
+                    difference = calculate.Subtract(x, y);
                     Console.WriteLine($"Your difference is {difference}.");
                 } else if (operation == operations[0, 2] || operation == operations[1, 2] || operation == operations[2, 2]) {
                     /* <3 `Multiplication' <3 */
@@ -103,7 +104,7 @@ namespace NijiCalculator {
                     Console.Write("Please enter the number you want to multiply by (again, no decimals please): ");
                     y = convenience.Input64BitInteger();
                     // Calculate the product
-                    product = x * y;
+                    product = calculate.Multiply(x, y);
                     Console.WriteLine($"Your product is {product}.");
                 } else if (operation == operations[0, 3] || operation == operations[1, 3] || operation == operations[2, 3]) {
                     /* <3 `Division' <3 */
@@ -129,7 +130,7 @@ namespace NijiCalculator {
                         goto DividedByZero;
                     } else if (yDivide != 0) {
                         // Calculate the quotient
-                        quotient = xDivide / yDivide;
+                        quotient = calculate.Divide(xDivide, yDivide);
                         Console.WriteLine($"Your quotient is {quotient}.");
                     }
                 } else if (operation == operations[0, 4] || operation == operations[1, 4] || operation == operations[2, 4]) {
@@ -155,7 +156,7 @@ namespace NijiCalculator {
                         goto DividedByZero;
                     } else if (y != 0) {
                         // Retrieve the remainder
-                        remainder = x % y;
+                        remainder = calculate.Modulo(x, y);
                         Console.WriteLine($"The remainder from {x} divided by {y} is {remainder}.");
                     }
                 } else if (operation == "Exit" || operation == "EXIT" || operation == "exit") {
