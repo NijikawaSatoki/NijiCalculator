@@ -31,5 +31,10 @@ namespace NijiCalculator {
             long z = x % y;
             return z;
         }
+        // Exponential functions
+        public double NthPower(double x, double y) {
+            double z = Math.Pow(x, y);
+            return z;
+        }
     }
 }
