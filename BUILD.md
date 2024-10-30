@@ -33,7 +33,7 @@ Now for the actual building part!
 To compile the calculator, just run this:
 
 ```
-mcs src/MainProgram.cs src/NijiConvenience/*.cs -out:NijiCalculator
+mcs src/MainProgram.cs src/NijiCalculator/*.cs src/NijiConvenience/*.cs -out:NijiCalculator
 ```
 
 Windows users may have to change `-out:NijiCalculator` to `-out:NijiCalculator.exe`.
