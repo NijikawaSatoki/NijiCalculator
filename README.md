@@ -11,7 +11,7 @@ It can do addition, subtraction, multiplication, division, and modulus.
 
 - [ ] Add square / 2nd power (x^2) functionality
 - [ ] Add cube / 3rd power (x^3) functionality
-- [ ] Add nth power (x^n) function
+- [x] Add nth power (x^n) function
 
 ## To-Do Archive
 
