@@ -47,9 +47,11 @@ namespace NijiCalculator {
             // The main calculator part :3
             do {
                 // Math variables
-                long x = 1;
-                long y = 1;
-                double yDivide = 1.000000000000000;
+                long x = 0;
+                long y = 0;
+                double yDivide = 0.000000000000000;
+                // This controls whether or not the DividedByZero code runs.
+                bool modeDivideMod = false;
                 Console.WriteLine("What operation would you like to perform?");
                 Console.WriteLine("Your current options are:");
                 // List of available operations
@@ -118,6 +120,7 @@ namespace NijiCalculator {
                     yDivide = convenience.InputDouble();
                     // Check if the divisor is 0
                     if (yDivide == 0) {
+                        modeDivideMod = true;
                         // You destroyed the universe...
                         Console.WriteLine("WARNING! USER ATTEMPTED TO DIVIDE BY ZERO!");
                         Console.WriteLine("...");
@@ -143,6 +146,7 @@ namespace NijiCalculator {
                     y = convenience.Input64BitInteger();
                     // Check if the divisor is 0
                     if (y == 0) {
+                        modeDivideMod = true;
                         // You destroyed the universe...
                         Console.WriteLine("WARNING! USER ATTEMPTED TO DIVIDE BY ZERO!");
                         Console.WriteLine("...");
@@ -163,7 +167,7 @@ namespace NijiCalculator {
                     Console.WriteLine(operations[0, 7]); // #@%$!
                 }
                 DividedByZero:
-                    if (yDivide == 0 || y == 0) {
+                    if (modeDivideMod == true) {
                         Console.WriteLine("*ugh*");
                         Console.WriteLine("I'll restore the universe back to how it was.");
                         Console.WriteLine("Next time, DON'T DIVIDE BY ZERO!");
