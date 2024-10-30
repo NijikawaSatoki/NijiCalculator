@@ -10,6 +10,7 @@ using System;
 
 namespace NijiCalculator {
     class Calculate {
+        // Basic functions
         public long Add(long x, long y) {
             long z = x + y;
             return z;
