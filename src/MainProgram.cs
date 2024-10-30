@@ -187,7 +187,7 @@ namespace NijiCalculator {
                     Console.Write("Please enter your exponent: ");
                     exponentPower = convenience.Input64BitInteger();
                     // Calculate the result
-                    powerResult = Math.Pow(exponentBase, exponentPower);
+                    powerResult = calculate.NthPower(exponentBase, exponentPower);
                     Console.WriteLine($"{exponentBase} to the power of {exponentPower} results in {powerResult}.");
                 } else if (operation == "Exit" || operation == "EXIT" || operation == "exit") {
                     /* <3 `Exit' <3 */
