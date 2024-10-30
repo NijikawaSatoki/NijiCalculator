@@ -174,6 +174,21 @@ namespace NijiCalculator {
                     }
                 } else if (operation == operations[0, 5] || operation == operations[1, 5] || operation == operations[2, 5]) {
                     /* <3 `nth Power Exponent' <3 */
+                    Console.WriteLine($"You chose {operations[2, 5]}.");
+                    // Initialise variables
+                    double exponentBase = 1.00;
+                    double exponentPower = 0.00;
+                    double powerResult = 1.00;
+                    // Explanation
+                    Console.WriteLine("Exponents simply denoted a number being multiplied by itself x amount of times.");
+                    // Grab user input
+                    Console.Write("Please enter your base: ");
+                    exponentBase = convenience.Input64BitInteger();
+                    Console.Write("Please enter your exponent: ");
+                    exponentPower = convenience.Input64BitInteger();
+                    // Calculate the result
+                    powerResult = Math.Pow(exponentBase, exponentPower);
+                    Console.WriteLine($"{exponentBase} to the power of {exponentPower} results in {powerResult}.");
                 } else if (operation == "Exit" || operation == "EXIT" || operation == "exit") {
                     /* <3 `Exit' <3 */
                     Console.WriteLine("Exiting the calculator...");
