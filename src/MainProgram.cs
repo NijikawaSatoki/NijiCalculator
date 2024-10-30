@@ -40,8 +40,8 @@ namespace NijiCalculator {
             // Objects
             Convenience convenience = new Convenience(); // ./NijiConvenience/Convenience.cs
             // Introduction
-            Console.WriteLine(SINGLE_TAB + "Niji's Calculator");
-            Console.WriteLine(DOUBLE_TAB + "By Niji System");
+            Console.WriteLine($"{SINGLE_TAB}\"Niji's Calculator\"");
+            Console.WriteLine($"{DOUBLE_TAB}By Niji System");
             Console.WriteLine(BLANK_LINE);
             Console.WriteLine("This is a calculator written in C#.");
             // The main calculator part :3
@@ -53,14 +53,14 @@ namespace NijiCalculator {
                 Console.WriteLine("What operation would you like to perform?");
                 Console.WriteLine("Your current options are:");
                 // List of available operations
-                Console.WriteLine(operations[0, 0] + SINGLE_TAB + operations[0, 1] + SINGLE_TAB + operations[0, 2] + LINE_BREAK + operations[0, 3] + SINGLE_TAB + operations[0, 4] + DOUBLE_TAB + "Exit");
+                Console.WriteLine($"{operations[0, 0]}{SINGLE_TAB}{operations[0, 1]}{SINGLE_TAB}{operations[0, 2]}{LINE_BREAK}{operations[0, 3]}{SINGLE_TAB}{operations[0, 4]}{DOUBLE_TAB}Exit");
                 // Retrieve user input
                 Console.Write("Please enter your selection: ");
                 operation = Console.ReadLine();
                 // Check against the available operations
                 if (operation == operations[0, 0] || operation == operations[1, 0] || operation == operations[2, 0]) {
                     /* <3 `Addition' <3 */
-                    Console.WriteLine("You chose " + operations[2, 0] + ".");
+                    Console.WriteLine($"You chose {operations[2, 0]}.");
                     // Initialise variables
                     long sum = 0;
                     // Explanation
@@ -72,10 +72,10 @@ namespace NijiCalculator {
                     y = convenience.Input64BitInteger();
                     // Calculate the sum
                     sum = x + y;
-                    Console.WriteLine("Your sum is " + sum + ".");
+                    Console.WriteLine($"Your sum is {sum}.");
                 } else if (operation == operations[0, 1] || operation == operations[1, 1] || operation == operations[2, 1]) {
                     /* <3 `Subtraction' <3 */
-                    Console.WriteLine("You chose " + operations[2, 1] + ".");
+                    Console.WriteLine($"You chose {operations[2, 1]}.");
                     // Initialise variables
                     long difference = 0;
                     // Explanation
@@ -87,10 +87,10 @@ namespace NijiCalculator {
                     y = convenience.Input64BitInteger();
                     // Calculate the difference
                     difference = x - y;
-                    Console.WriteLine("Your difference is " + difference + ".");
+                    Console.WriteLine($"Your difference is {difference}.");
                 } else if (operation == operations[0, 2] || operation == operations[1, 2] || operation == operations[2, 2]) {
                     /* <3 `Multiplication' <3 */
-                    Console.WriteLine("You chose " + operations[2, 2] + ".");
+                    Console.WriteLine($"You chose {operations[2, 2]}.");
                     // Initialise variables
                     long product = 0;
                     // Explanation
@@ -102,10 +102,10 @@ namespace NijiCalculator {
                     y = convenience.Input64BitInteger();
                     // Calculate the product
                     product = x * y;
-                    Console.WriteLine("Your product is " + product + ".");
+                    Console.WriteLine($"Your product is {product}.");
                 } else if (operation == operations[0, 3] || operation == operations[1, 3] || operation == operations[2, 3]) {
                     /* <3 `Division' <3 */
-                    Console.WriteLine("You chose " + operations[2, 3] + ".");
+                    Console.WriteLine($"You chose {operations[2, 3]}.");
                     // Initialise variables
                     double xDivide = 0.000000000000000;
                     double quotient = 0.000000000000000;
@@ -127,11 +127,11 @@ namespace NijiCalculator {
                     } else if (yDivide != 0) {
                         // Calculate the quotient
                         quotient = xDivide / yDivide;
-                        Console.WriteLine("Your quotient is " + quotient + ".");
+                        Console.WriteLine($"Your quotient is {quotient}.");
                     }
                 } else if (operation == operations[0, 4] || operation == operations[1, 4] || operation == operations[2, 4]) {
                     /* <3 `Modulus' <3 */
-                    Console.WriteLine("You chose " + operations[2, 4] + ".");
+                    Console.WriteLine($"You chose {operations[2, 4]}.");
                     // Initialise variables
                     long remainder = 0;
                     // Explanation
@@ -152,7 +152,7 @@ namespace NijiCalculator {
                     } else if (y != 0) {
                         // Retrieve the remainder
                         remainder = x % y;
-                        Console.WriteLine("The remainder from " + x + " divided by " + y + " is " + remainder + ".");
+                        Console.WriteLine($"The remainder from {x} divided by {y} is {remainder}.");
                     }
                 } else if (operation == "Exit" || operation == "EXIT" || operation == "exit") {
                     /* <3 `Exit' <3 */
