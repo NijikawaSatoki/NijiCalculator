@@ -214,8 +214,8 @@ namespace NijiCalculator {
                     Console.WriteLine($"You chose {operations[2, 6]}.");
                     
                     // Initialise variables
-                    double squareBase == 1.00;
-                    double square == 0.00;
+                    double squareBase = 1.00;
+                    double square = 0.00;
                     
                     // Explanation
                     Console.WriteLine("Squaring is multiply a number by itself once, e.g. 3² = 3×3.");
