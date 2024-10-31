@@ -30,13 +30,13 @@ namespace NijiCalculator {
             string[,] operations = new string[3, 8] {
                 {
                     // Preferred
-                    "Addition", "Subtraction", "Multiplication", "Division", "Modulus", "Exponent", "#@%$!", "#@%$!"
+                    "Addition", "Subtraction", "Multiplication", "Division", "Modulus", "Exponent", "Square", "#@%$!"
                 }, {
                     // For the folks that keep CAPS_LOCK 'on' for some reason
-                    "ADDITION", "SUBTRACTION", "MULTIPLICATION", "DIVISION", "MODULUS", "exponent", "#@%$!", "#@%$!"
+                    "ADDITION", "SUBTRACTION", "MULTIPLICATION", "DIVISION", "MODULUS", "exponent", "SQUARE", "#@%$!"
                 }, {
                     // For those that never capitalise
-                    "addition", "subtraction", "multiplication", "division", "modulus", "exponent", "#@%$!", "#@%$!"
+                    "addition", "subtraction", "multiplication", "division", "modulus", "exponent", "square", "#@%$!"
                 }
             };
             
