@@ -33,7 +33,7 @@ namespace NijiCalculator {
                     "Addition", "Subtraction", "Multiplication", "Division", "Modulus", "Exponent", "Square", "#@%$!"
                 }, {
                     // For the folks that keep CAPS_LOCK 'on' for some reason
-                    "ADDITION", "SUBTRACTION", "MULTIPLICATION", "DIVISION", "MODULUS", "exponent", "SQUARE", "#@%$!"
+                    "ADDITION", "SUBTRACTION", "MULTIPLICATION", "DIVISION", "MODULUS", "EXPONENT", "SQUARE", "#@%$!"
                 }, {
                     // For those that never capitalise
                     "addition", "subtraction", "multiplication", "division", "modulus", "exponent", "square", "#@%$!"
