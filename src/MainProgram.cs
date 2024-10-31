@@ -202,9 +202,9 @@ namespace NijiCalculator {
                     
                     // Grab user input
                     Console.Write("Please enter your base: ");
-                    exponentBase = convenience.Input64BitInteger();
+                    exponentBase = convenience.InputDouble();
                     Console.Write("Please enter your exponent: ");
-                    exponentPower = convenience.Input64BitInteger();
+                    exponentPower = convenience.InputDouble();
                     
                     // Calculate the result
                     powerResult = calculate.NthPower(exponentBase, exponentPower);
