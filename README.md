@@ -9,7 +9,7 @@ It can do addition, subtraction, multiplication, division, and modulus.
 
 ## Current To-Do
 
-- [ ] Add square / 2nd power (x^2) functionality
+- [x] Add square / 2nd power (x^2) functionality
 - [ ] Add cube / 3rd power (x^3) functionality
 - [x] Add nth power (x^n) function
 
