@@ -63,7 +63,7 @@ namespace NijiCalculator {
                 Console.WriteLine("Your current options are:");
                 
                 // List of available operations
-                Console.WriteLine($"{operations[0, 0]}{SINGLE_TAB}{operations[0, 1]}{SINGLE_TAB}{operations[0, 2]}{LINE_BREAK}{operations[0, 3]}{SINGLE_TAB}{operations[0, 4]}{DOUBLE_TAB}{operations[0, 5]}{LINE_BREAK}{operations[0, 6]}{SINGLE_TAB}Exit");
+                Console.WriteLine($"{operations[0, 0]}{SINGLE_TAB}{operations[0, 1]}{SINGLE_TAB}{operations[0, 2]}{LINE_BREAK}{operations[0, 3]}{SINGLE_TAB}{operations[0, 4]}{DOUBLE_TAB}{operations[0, 5]}{LINE_BREAK}{operations[0, 6]}{DOUBLE_TAB}Exit");
                 
                 // Retrieve user input
                 Console.Write("Please enter your selection: ");
