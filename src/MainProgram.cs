@@ -209,6 +209,24 @@ namespace NijiCalculator {
                     // Calculate the result
                     powerResult = calculate.NthPower(exponentBase, exponentPower);
                     Console.WriteLine($"{exponentBase} to the power of {exponentPower} results in {powerResult}.");
+                } else if (operation == operations[0, 6] || operation == operations[1, 6] || operation == operations[2, 6]) {
+                    /* <3 `Square' <3 */
+                    Console.WriteLine($"You chose {operations[2, 6]}.");
+                    
+                    // Initialise variables
+                    double squareBase == 1.00;
+                    double square == 0.00;
+                    
+                    // Explanation
+                    Console.WriteLine("Squaring is multiply a number by itself once, e.g. 3² = 3×3.");
+                    
+                    // Grab user input
+                    Console.Write("Please enter your base: ");
+                    squareBase = convenience.InputDouble();
+                    
+                    // Calculate the square
+                    square = calculate.Square(squareBase);
+                    Console.WriteLine($"Your square is {square}.");
                 } else if (operation == "Exit" || operation == "EXIT" || operation == "exit") {
                     /* <3 `Exit' <3 */
                     Console.WriteLine("Exiting the calculator...");
