@@ -254,7 +254,7 @@ namespace NijiCalculator {
                     break;
                 } else {
                     /* <3 Invalid input <3 */
-                    Console.WriteLine(operations[0, 7]); // #@%$!
+                    Console.WriteLine("#@%$!"); // #@%$!
                 }
                 
                 DividedByZero:
