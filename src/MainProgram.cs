@@ -46,6 +46,7 @@ namespace NijiCalculator {
 
             // Create output file
             string path = convenience.CreateOutput();
+            File.WriteAllText(path, "Starting output...\n\n");
 
             // Introduction
             Console.WriteLine($"{SINGLE_TAB}\"Niji's Calculator\"");
