@@ -34,5 +34,27 @@ namespace NijiConvenience {
             long int64 = Convert.ToInt64(Console.ReadLine());
             return int64;
         }
+        
+        public string CreateOutput() {
+            // Constants
+            const string CURRENT_DIRECTORY = @"./";
+            // Output variables
+            string outputDirectory = @"output/";
+            string outputFile = @"output.txt";
+            string outputPath = $@"{CURRENT_DIRECTORY}{outputDirectory}{outputFile}";
+            // Check if the output path exists
+            if (!File.Exists(outputPath)) {
+                // Check if the output directory exists
+                if (!Directory.Exists(outputDirectory)) {
+                    // Create the directory
+                    Directory.CreateDirectory(outputDirectory);
+                }
+                // Create the file
+                File.Create(outputFile);
+            } else {
+                Console.WriteLine($"\'{outputPath}\' already exists!")
+            }
+            return outputPath;
+        }
     }
 }
