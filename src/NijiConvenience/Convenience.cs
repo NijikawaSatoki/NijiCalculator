@@ -52,7 +52,7 @@ namespace NijiConvenience {
                 // Create the file
                 File.Create(outputFile);
             } else {
-                Console.WriteLine($"\'{outputPath}\' already exists!")
+                Console.WriteLine($"\'{outputPath}\' already exists!");
             }
             return outputPath;
         }
