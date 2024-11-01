@@ -48,5 +48,10 @@ namespace NijiCalculator {
             double y = Math.Pow(x, 2);
             return y;
         }
+
+        public double Cube(double x) {
+            double y = Math.Pow(x, 3);
+            return y;
+        }
     }
 }
