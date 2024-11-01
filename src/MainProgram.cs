@@ -221,7 +221,7 @@ namespace NijiCalculator {
                     double square = 0.00;
                     
                     // Explanation
-                    Console.WriteLine("Squaring is multiply a number by itself once, e.g. 3² = 3×3.");
+                    Console.WriteLine("Squaring is multiplying a number by itself once, e.g. 3² = 3×3.");
                     
                     // Grab user input
                     Console.Write("Please enter your base: ");
