@@ -230,6 +230,24 @@ namespace NijiCalculator {
                     // Calculate the square
                     square = calculate.Square(squareBase);
                     Console.WriteLine($"Your square is {square}.");
+                } else if (operation == operations[0, 7] || operation == operations[1, 7] || operation == operations[2, 7]) {
+                    /* <3 `Cube' <3 */
+                    Console.WriteLine($"You chose {operations[2, 7]}.");
+
+                    // Initialise variables
+                    double cubeBase = 1.00;
+                    double cube = 0.00;
+
+                    // Explanation
+                    Console.WriteLine("Cubing is multiplying a number by itself twice, e.g. 3³ = 3×3×3");
+
+                    // Grab user input
+                    Console.Write("Please enter your base: ");
+                    cubeBase = convenience.InputDouble();
+
+                    // Calculate the cube
+                    cube = calculate.Cube(cubeBase);
+                    Console.WriteLine($"Your cube is {cube}.");
                 } else if (operation == "Exit" || operation == "EXIT" || operation == "exit") {
                     /* <3 `Exit' <3 */
                     Console.WriteLine("Exiting the calculator...");
