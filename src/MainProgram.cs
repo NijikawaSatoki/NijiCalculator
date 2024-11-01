@@ -43,7 +43,10 @@ namespace NijiCalculator {
             // Objects
             Convenience convenience = new Convenience(); // ./NijiConvenience/Convenience.cs
             Calculate calculate = new Calculate(); // ./NijiCalculator/Calculate.cs
-            
+
+            // Create output file
+            string path = convenience.CreateOutput();
+
             // Introduction
             Console.WriteLine($"{SINGLE_TAB}\"Niji's Calculator\"");
             Console.WriteLine($"{DOUBLE_TAB}By Niji System");
