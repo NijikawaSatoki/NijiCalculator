@@ -37,3 +37,5 @@ mcs src/MainProgram.cs src/NijiCalculator/*.cs src/NijiConvenience/*.cs -out:Nij
 ```
 
 Windows users may have to change `-out:NijiCalculator` to `-out:NijiCalculator.exe`.
+
+Alternatively, you could just run the `build.sh` script.
