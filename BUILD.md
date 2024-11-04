@@ -38,4 +38,4 @@ mcs src/MainProgram.cs src/NijiCalculator/*.cs src/NijiConvenience/*.cs -out:Nij
 
 Windows users may have to change `-out:NijiCalculator` to `-out:NijiCalculator.exe`.
 
-Alternatively, you could just run the `build.sh` script.
+Alternatively, you could just run the `build-linux.sh` script (if you're on Linux or are using Termux on Android) or `build-win64.sh` script (if you're on Windows).
