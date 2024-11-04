@@ -12,7 +12,7 @@ It can do addition, subtraction, multiplication, division, and modulus.
 - [x] Add square / 2nd power (x^2) functionality
 - [x] Add cube / 3rd power (x^3) functionality
 - [x] Add nth power (x^n) function
-- [ ] Get the calculator output file up and working
+- [x] Get the calculator output file up and working
 
 ## To-Do Archive
 
