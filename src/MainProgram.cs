@@ -324,24 +324,36 @@ namespace NijiCalculator {
                 } else if (operation == operations[0, 5] || operation == operations[1, 5] || operation == operations[2, 5]) {
                     /* <3 `nth Power Exponent' <3 */
                     Console.WriteLine($"You chose {operations[2, 5]}.");
+                    calculatorOutput.WriteLine($"{OUTPUT}You chose {operations[2, 5]}.");
                     
                     // Initialise variables
                     double exponentBase = 1.00;
+                    calculatorOutput.WriteLine($"{LOG_OUTPUT}Variable `exponentBase' has been set to `{exponentBase}'.");
                     double exponentPower = 0.00;
+                    calculatorOutput.WriteLine($"{LOG_OUTPUT}Variable `exponentPower' has been set to `{exponentPower}'.");
                     double powerResult = 1.00;
+                    calculatorOutput.WriteLine($"{LOG_OUTPUT}Variable `powerResult' has been set to `{powerResult}'.");
                     
                     // Explanation
                     Console.WriteLine("Exponents simply denoted a number being multiplied by itself x amount of times.");
+                    calculatorOutput.WriteLine($"{OUTPUT}Exponents simply denoted a number being multiplied by itself x amount of times.");
                     
                     // Grab user input
                     Console.WriteLine("Please enter your base: ");
                     exponentBase = convenience.InputDouble();
+                    calculatorOutput.WriteLine($"{OUTPUT}Please enter your base: {exponentBase}");
+                    calculatorOutput.WriteLine($"{LOG_OUTPUT}Variable `exponentBase' has been set to `{exponentBase}'.");
                     Console.WriteLine("Please enter your exponent: ");
                     exponentPower = convenience.InputDouble();
-                    
+                    calculatorOutput.WriteLine($"{OUTPUT}Please enter your exponent: {exponentPower}");
+                    calculatorOutput.WriteLine($"{LOG_OUTPUT}Variable `exponentPower' has been set to `{exponentPower}'.");
+
                     // Calculate the result
                     powerResult = calculate.NthPower(exponentBase, exponentPower);
+                    calculatorOutput.WriteLine($"{MATH_OUTPUT}{exponentBase}^{exponentPower} = {powerResult}");
+                    calculatorOutput.WriteLine($"{LOG_OUTPUT}Variable `powerResult' has been set to `{powerResult}'.");
                     Console.WriteLine($"{exponentBase} to the power of {exponentPower} results in {powerResult}.");
+                    calculatorOutput.WriteLine($"{OUTPUT}{exponentBase} to the power of {exponentPower} results in {powerResult}.");
                 } else if (operation == operations[0, 6] || operation == operations[1, 6] || operation == operations[2, 6]) {
                     /* <3 `Square' <3 */
                     Console.WriteLine($"You chose {operations[2, 6]}.");
