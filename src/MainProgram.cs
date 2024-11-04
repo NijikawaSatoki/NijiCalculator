@@ -357,21 +357,30 @@ namespace NijiCalculator {
                 } else if (operation == operations[0, 6] || operation == operations[1, 6] || operation == operations[2, 6]) {
                     /* <3 `Square' <3 */
                     Console.WriteLine($"You chose {operations[2, 6]}.");
+                    calculatorOutput.WriteLine($"{OUTPUT}You chose {operations[2, 6]}.");
                     
                     // Initialise variables
                     double squareBase = 1.00;
+                    calculatorOutput.WriteLine($"{LOG_OUTPUT}Variable `squareBase' has been set to `{squareBase}'.");
                     double square = 0.00;
-                    
+                    calculatorOutput.WriteLine($"{LOG_OUTPUT}Variable `square' has been set to `{square}'.");
+
                     // Explanation
                     Console.WriteLine("Squaring is multiplying a number by itself once, e.g. 3² = 3×3.");
+                    calculatorOutput.WriteLine($"{OUTPUT}Squaring is multiplying a number by itself once, e.g. 3² = 3×3.");
                     
                     // Grab user input
                     Console.WriteLine("Please enter your base: ");
                     squareBase = convenience.InputDouble();
+                    calculatorOutput.WriteLine($"{OUTPUT}Please enter your base: {squareBase}");
+                    calculatorOutput.WriteLine($"{LOG_OUTPUT}Variable `squareBase' has been set to `{squareBase}'.");
                     
                     // Calculate the square
                     square = calculate.Square(squareBase);
+                    calculatorOutput.WriteLine($"{MATH_OUTPUT}{squareBase}² = {square}");
+                    calculatorOutput.WriteLine($"{LOG_OUTPUT}Variable `square' has been set to `{square}'.");
                     Console.WriteLine($"Your square is {square}.");
+                    calculatorOutput.WriteLine($"{OUTPUT}Your square is {square}.");
                 } else if (operation == operations[0, 7] || operation == operations[1, 7] || operation == operations[2, 7]) {
                     /* <3 `Cube' <3 */
                     Console.WriteLine($"You chose {operations[2, 7]}.");
