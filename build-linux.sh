@@ -4,4 +4,4 @@
 
 mcs src/MainProgram.cs \
 src/NijiCalculator/Calculate.cs \
-src/NijiConvenience/Convenience.cs -out:test/newTest11
+src/NijiConvenience/Convenience.cs -out:NijiCalculator
