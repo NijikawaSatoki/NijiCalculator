@@ -384,21 +384,30 @@ namespace NijiCalculator {
                 } else if (operation == operations[0, 7] || operation == operations[1, 7] || operation == operations[2, 7]) {
                     /* <3 `Cube' <3 */
                     Console.WriteLine($"You chose {operations[2, 7]}.");
+                    calculatorOutput.WriteLine($"{OUTPUT}You chose {operations[2, 7]}.");
 
                     // Initialise variables
                     double cubeBase = 1.00;
+                    calculatorOutput.WriteLine($"{LOG_OUTPUT}Variable `cubeBase' has been set to `{cubeBase}'.");
                     double cube = 0.00;
+                    calculatorOutput.WriteLine($"{LOG_OUTPUT}Variable `cube' has been set to `{cube}'.");
 
                     // Explanation
                     Console.WriteLine("Cubing is multiplying a number by itself twice, e.g. 3³ = 3×3×3");
+                    calculatorOutput.WriteLine($"{OUTPUT}Cubing is multiplying a number by itself twice, e.g. 3³ = 3×3×3");
 
                     // Grab user input
                     Console.WriteLine("Please enter your base: ");
                     cubeBase = convenience.InputDouble();
+                    calculatorOutput.WriteLine($"{OUTPUT}Please enter your base: {cubeBase}");
+                    calculatorOutput.WriteLine($"{LOG_OUTPUT}Variable `cubeBase' has been set to `{cubeBase}'.");
 
                     // Calculate the cube
                     cube = calculate.Cube(cubeBase);
+                    calculatorOutput.WriteLine($"{MATH_OUTPUT}{cubeBase}³ = {cube}");
+                    calculatorOutput.WriteLine($"{LOG_OUTPUT}Variable `cube' has been set to `{cube}'.");
                     Console.WriteLine($"Your cube is {cube}.");
+                    calculatorOutput.WriteLine($"{OUTPUT}Your cube is {cube}.");
                 } else if (operation == "Exit" || operation == "EXIT" || operation == "exit") {
                     /* <3 `Exit' <3 */
                     Console.WriteLine("Exiting the calculator...");
