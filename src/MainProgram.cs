@@ -65,9 +65,9 @@ namespace NijiCalculator {
             Calculate calculate = new Calculate(); // ./NijiCalculator/Calculate.cs
 
             // Create output file and set path
-            convenience.CreateOutput("v1.1.0-test-11");
+            convenience.CreateOutput("v1.1.0");
 
-            string version = "v1.1.0-test-11";
+            string version = "v1.1.0";
             string appDataDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string outputFile = $@"Calculator_Output-{version}.txt";
             string dataDirectory = @"NijiCalculator";
@@ -112,8 +112,8 @@ namespace NijiCalculator {
             calculatorOutput.WriteLine($"{OUTPUT}{SINGLE_TAB}\"Niji's Calculator\"");
             Console.WriteLine($"{DOUBLE_TAB}By Niji System");
             calculatorOutput.WriteLine($"{OUTPUT}{DOUBLE_TAB}By Niji System");
-            Console.WriteLine($"{DOUBLE_TAB}Version 1.1.0-test-11");
-            calculatorOutput.WriteLine($"{OUTPUT}{DOUBLE_TAB}Version 1.1.0-test-11");
+            Console.WriteLine($"{DOUBLE_TAB}Version 1.1.0");
+            calculatorOutput.WriteLine($"{OUTPUT}{DOUBLE_TAB}Version 1.1.0");
             Console.WriteLine(BLANK_LINE);
             calculatorOutput.WriteLine($"{OUTPUT}");
             Console.WriteLine("This is a calculator written in C#.");
