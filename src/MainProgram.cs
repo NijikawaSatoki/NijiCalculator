@@ -10,6 +10,7 @@
 using System;
 using System.Text;
 using System.IO;
+using System.Runtime.InteropServices;
 
 // User defined namespaces
 using NijiConvenience;
@@ -26,6 +27,14 @@ namespace NijiCalculator {
         static void Main(string[] args) {
             // Force UTF-8 encoding, since C# doesn't seem to do it right :(
             Console.OutputEncoding = Encoding.UTF8;
+
+            // Check the operating system (OS)
+            char directorySeparator = '/';
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) {
+                directorySeparator = '\\';
+            } else {
+                directorySeparator = '/';
+            }
 
             // Constants
             const char LINE_BREAK = '\n';
@@ -56,14 +65,14 @@ namespace NijiCalculator {
             Calculate calculate = new Calculate(); // ./NijiCalculator/Calculate.cs
 
             // Create output file and set path
-            convenience.CreateOutput("v1.1.0-test-0d");
+            convenience.CreateOutput("v1.1.0-test-0e");
 
-            string version = "v1.1.0-test-0d";
+            string version = "v1.1.0-test-0e";
             string appDataDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             string outputFile = $@"Calculator_Output-{version}.txt";
             string dataDirectory = @"NijiCalculator";
 
-            string path = $@"{appDataDirectory}/{dataDirectory}/{outputFile}";
+            string path = $@"{appDataDirectory}{directorySeparator}{dataDirectory}{directorySeparator}{outputFile}";
 
             // Overwrite the previous output
             using (StreamWriter startAnew = new StreamWriter(path, false)) {
@@ -97,7 +106,7 @@ namespace NijiCalculator {
             calculatorOutput.WriteLine($"{OUTPUT}{SINGLE_TAB}\"Niji's Calculator\"");
             Console.WriteLine($"{DOUBLE_TAB}By Niji System");
             calculatorOutput.WriteLine($"{OUTPUT}{DOUBLE_TAB}By Niji System");
-            calculatorOutput.WriteLine($"{OUTPUT}{DOUBLE_TAB}Version 1.1.0-test-0d");
+            calculatorOutput.WriteLine($"{OUTPUT}{DOUBLE_TAB}Version 1.1.0-test-0e");
             Console.WriteLine(BLANK_LINE);
             calculatorOutput.WriteLine($"{OUTPUT}");
             Console.WriteLine("This is a calculator written in C#.");
@@ -223,33 +232,49 @@ namespace NijiCalculator {
                 } else if (operation == operations[0, 3] || operation == operations[1, 3] || operation == operations[2, 3]) {
                     /* <3 `Division' <3 */
                     Console.WriteLine($"You chose {operations[2, 3]}.");
+                    calculatorOutput.WriteLine($"{OUTPUT}You chose {operations[2, 3]}.");
                     
                     // Initialise variables
                     double xDivide = 0.000000000000000;
+                    calculatorOutput.WriteLine($"{LOG_OUTPUT}Variable `xDivide' has been set to `{xDivide}'.");
                     double quotient = 0.000000000000000;
+                    calculatorOutput.WriteLine($"{LOG_OUTPUT}Variable `quotient' has been set to `{quotient}'.");
                     
                     // Explanation
                     Console.WriteLine("Division divides one number by another.");
+                    calculatorOutput.WriteLine($"{OUTPUT}Division divides one number by another.");
                     
                     // Grab user input
                     Console.WriteLine("Please enter a number: ");
                     xDivide = convenience.InputDouble();
+                    calculatorOutput.WriteLine($"{OUTPUT}Please enter a number: {xDivide}");
+                    calculatorOutput.WriteLine($"{LOG_OUTPUT}Variable `xDivide' has been set to `{xDivide}'.");
                     Console.WriteLine("Please enter the number you want divide by: ");
                     yDivide = convenience.InputDouble();
+                    calculatorOutput.WriteLine($"{OUTPUT}Please enter the number you want divide by: {yDivide}");
+                    calculatorOutput.WriteLine($"{LOG_OUTPUT}Variable `yDivide' has been set to `{yDivide}'.");
                     
                     // Check if the divisor is 0
                     if (yDivide == 0) {
                         divideByZero = true;
+                        calculatorOutput.WriteLine($"{LOG_OUTPUT}Variable `divideByZero' has been set to `{divideByZero}'.");
                         // You destroyed the universe...
                         Console.WriteLine("WARNING! USER ATTEMPTED TO DIVIDE BY ZERO!");
+                        calculatorOutput.WriteLine($"{OUTPUT}WARNING! USER ATTEMPTED TO DIVIDE BY ZERO!");
                         Console.WriteLine("...");
+                        calculatorOutput.WriteLine($"{OUTPUT}...");
                         Console.WriteLine("Are you happy with yourself?");
+                        calculatorOutput.WriteLine($"{OUTPUT}Are you happy with yourself?");
                         Console.WriteLine("You just destroyed the entire universe by creating a singularity.");
+                        calculatorOutput.WriteLine($"{OUTPUT}You just destroyed the entire universe by creating a singularity.");
                         goto DividedByZero;
                     } else if (yDivide != 0) {
                         // Calculate the quotient
                         quotient = calculate.Divide(xDivide, yDivide);
+                        calculatorOutput.WriteLine($"{MATH_OUTPUT}{xDivide} ÷ {yDivide} = {quotient}");
+                        calculatorOutput.WriteLine($"{LOG_OUTPUT}Variable `quotient' has been set to `{quotient}'.");
                         Console.WriteLine($"Your quotient is {quotient}.");
+                        calculatorOutput.WriteLine($"{OUTPUT}Your quotient is {quotient}.");
                     }
                 } else if (operation == operations[0, 4] || operation == operations[1, 4] || operation == operations[2, 4]) {
                     /* <3 `Modulus' <3 */
@@ -270,11 +295,16 @@ namespace NijiCalculator {
                     // Check if the divisor is 0
                     if (y == 0) {
                         divideByZero = true;
+                        calculatorOutput.WriteLine($"{LOG_OUTPUT}Variable `divideByZero' has been set to `{divideByZero}'.");
                         // You destroyed the universe...
                         Console.WriteLine("WARNING! USER ATTEMPTED TO DIVIDE BY ZERO!");
+                        calculatorOutput.WriteLine($"{OUTPUT}WARNING! USER ATTEMPTED TO DIVIDE BY ZERO!");
                         Console.WriteLine("...");
+                        calculatorOutput.WriteLine($"{OUTPUT}...");
                         Console.WriteLine("Are you happy with yourself?");
+                        calculatorOutput.WriteLine($"{OUTPUT}Are you happy with yourself?");
                         Console.WriteLine("You just destroyed the entire universe by creating a singularity.");
+                        calculatorOutput.WriteLine($"{OUTPUT}You just destroyed the entire universe by creating a singularity.");
                         goto DividedByZero;
                     } else if (y != 0) {
                         // Retrieve the remainder
