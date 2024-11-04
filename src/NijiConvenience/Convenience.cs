@@ -36,10 +36,10 @@ namespace NijiConvenience {
             return int64;
         }
         
-        public void CreateOutput() {
+        public void CreateOutput(string version) {
             // Path parts
             string appDataDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-            string outputFile = @"Calculator_Output.txt";
+            string outputFile = $@"Calculator_Output-{version}.txt";
             string dataDirectory = @"NijiCalculator";
             // Full path
             string path = $@"{appDataDirectory}/{dataDirectory}/{outputFile}";
