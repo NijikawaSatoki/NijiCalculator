@@ -1,0 +1,7 @@
+#!/bin/sh
+
+dotnet build MainProgram.cs NijiMath.cs \
+-a x86 \
+-o release/NijiCalculator \
+--os win-x64 \
+--sc

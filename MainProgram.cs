@@ -1,0 +1,101 @@
+/* ============================
+ * Niji Calculator
+ * ============================
+ * 
+ * presented by:
+ *     Niji System
+ *         Satoki Nijikawa
+ *         Wamo
+ *         Kiyoi
+ *         Vihreääketty
+ *         Hsiao Lyuhsien
+ *         Antiainehunt Õudus
+ *         Rinith
+ *         Q'aemil
+ */
+
+using System;
+
+namespace NijiCalculator
+{
+    class MainProgram
+    {
+        static int Main()
+        {
+            // Create the objects
+            NijiMath math = new NijiMath();
+            // Start!
+            const string TITLE = "\"Niji's Calculator\"\n";
+            const string AUTHOR = "Niji System\n\n";
+            Console.Write($"{TITLE}{AUTHOR}");
+            // Decisions...
+            string[] options {
+                "Addition", "\t",       // Option 0
+                "Subtraction", "\t",    // Option 1
+                "Multiplication", "\n", // Option 2
+                "Division", "\t",       // Option 3
+                "Modulus"               // Option 4
+            };
+            string optionList = $"0. {options[0]}{options[1]}1. {options[2]}{options[3]}2. {options[4]}{options[5]}3. {options[6]}{options[7]}4. {options[8]}";
+            Console.WriteLine("Welcome!");
+            Console.WriteLine(optionList);
+            Console.Write("What do you want to do? ");
+            int choice = Convert.ToInt32(Console.ReadLine());
+            // Execute
+            switch (choice)
+            {
+                case 0:     // Addition
+                    Console.Write("Enter a number: ");
+                    int addX = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Enter another number: ");
+                    int addY = Convert.ToInt32(Console.ReadLine());
+                    int addResult = math.Addition(addX, addY);
+                    Console.WriteLine($"{addX} + {addY} = {addResult}");
+                    break;
+                case 1:     // Subtraction
+                    Console.Write("Enter a number: ");
+                    int subtractX = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Enter another number: ");
+                    int subtractY = Convert.ToInt32(Console.ReadLine());
+                    int subtractResult = math.Subtraction(subtractX, subtractY);
+                    Console.WriteLine($"{subtractX} - {subtractY} = {subtractResult}");
+                    break;
+                case 2:     // Multiplication
+                    Console.Write("Enter a number: ");
+                    int multiplyX = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Enter another number: ");
+                    int multiplyY = Convert.ToInt32(Console.ReadLine());
+                    int multiplyResult = math.Multiplication(multiplyX, multiplyY);
+                    Console.WriteLine($"{multiplyX} * {multiplyY} = {multiplyResult}");
+                    break;
+                case 3:     // Division
+                    Console.Write("Enter a number: ");
+                    int divideX = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Enter another number: ");
+                    int divideY = Convert.ToInt32(Console.ReadLine());
+                    int divideResult = math.Division(divideX, divideY);
+                    Console.WriteLine($"{divideX} * {divideY} = {divideResult}");
+                    break;
+                case 4:     // Modulus
+                    Console.Write("Enter a number: ");
+                    int moduloX = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Enter another number: ");
+                    int moduloY = Convert.ToInt32(Console.ReadLine());
+                    int moduloResult = math.Modulus(moduloX, moduloY);
+                    Console.WriteLine($"{moduloX} * {moduloY} = {moduloResult}");
+                    break;
+                default:    // Out of bounds
+                    Console.WriteLine("Out of bounds!");
+                    Console.WriteLine("Stop using that damned noclip!");
+                    break;
+                // End of switch block
+            }
+            // Sendoff
+            Console.WriteLine("Have a nice day.");
+            // Exit the program
+            return 0;
+        }
+    }
+}
+
+/* >>>>>> END OF FILE <<<<<< */

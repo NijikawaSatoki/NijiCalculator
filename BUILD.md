@@ -38,4 +38,22 @@ mcs src/MainProgram.cs src/NijiCalculator/*.cs src/NijiConvenience/*.cs -out:Nij
 
 Windows users may have to change `-out:NijiCalculator` to `-out:NijiCalculator.exe`.
 
-Alternatively, you could just run the `build-linux.sh` script (if you're on Linux or are using Termux on Android) or `build-win64.sh` script (if you're on Windows).
+Alternatively, you could just run the `build-mono-linux` script (if you're on Linux or are using Termux on Android) or `build-mono-win64` script (if you're on Windows using MSYS2).
+
+## .NET
+
+This is the current way to compile.
+
+### Installing .NET
+
+For Arch users:
+
+```
+sudo pacman -S dotnet-sdk dotnet-runtime
+```
+
+For MSYS2 users: You'll be using the Windows install of .NET that you installed.
+
+### Running the .NET compiler
+
+Not gonna tell you the full command for this... just use the `build-dotnet-linux` script (if you're on Linux) or `build-dotnet-win64` script (if you're on Windows using MSYS2).
