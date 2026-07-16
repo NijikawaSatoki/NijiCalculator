@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# This will build the English version for 64-bit Windows
+
+dotnet build en-US/MainProgram.cs en-US/NijiMath.cs \
+-o release/NijiCalculator \
+--runtime win-x64 \
+--sc

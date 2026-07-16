@@ -4,4 +4,4 @@
 
 # This script simply runs mono's compiler
 
-mcs MainProgram.cs NijiMath.cs -out:release/NijiCalculator
+mcs en-US/MainProgram.cs en-US/NijiMath.cs -out:release/NijiCalculator

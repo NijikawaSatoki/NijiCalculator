@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# This will build the English version for 32-bit Windows on ARM systems
+
+dotnet build en-US/MainProgram.cs en-US/NijiMath.cs \
+-o release/NijiCalculator \
+--runtime win-arm64 \
+--sc

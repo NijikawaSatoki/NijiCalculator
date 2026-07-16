@@ -15,6 +15,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 
 namespace NijiCalculator
 {
@@ -29,15 +30,17 @@ namespace NijiCalculator
             const string AUTHOR = "Niji System\n\n";
             Console.Write($"{TITLE}{AUTHOR}");
             // Decisions...
-            string[] options {
-                "Addition", "\t",       // Option 0
-                "Subtraction", "\t",    // Option 1
-                "Multiplication", "\n", // Option 2
-                "Division", "\t",       // Option 3
-                "Modulus", "\t",        // Option 4
-                "Summation"             // Option 5
-            };
-            string optionList = $"0. {options[0]}{options[1]}1. {options[2]}{options[3]}2. {options[4]}{options[5]}3. {options[6]}{options[7]}4. {options[8]}{options[9]}5. {options[10]}";
+            SetUpList:
+            {
+                List<string> options = new List<string>();
+                options.Add("Addition");          // Option 0
+                options.Add("Subtraction");       // Option 1
+                options.Add("Multiplication");    // Option 2
+                options.Add("Division");          // Option 3
+                options.Add("Modulus");           // Option 4
+                options.Add("Summation");         // Option 5
+            }
+            string optionList = $"";
             Console.WriteLine("Welcome!");
             Console.WriteLine(optionList);
             Console.Write("What do you want to do? ");
