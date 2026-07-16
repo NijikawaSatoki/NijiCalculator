@@ -56,6 +56,17 @@ namespace NijiCalculator
             int z = x % y;
             return z;
         }
+        public int Summation(int n)
+        {
+            int sum = 0;
+            int x = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                x = x + i;
+            }
+            sum = x;
+            return sum;
+        }
     }
 }
 

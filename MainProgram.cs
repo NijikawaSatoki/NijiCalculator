@@ -34,9 +34,10 @@ namespace NijiCalculator
                 "Subtraction", "\t",    // Option 1
                 "Multiplication", "\n", // Option 2
                 "Division", "\t",       // Option 3
-                "Modulus"               // Option 4
+                "Modulus", "\t",        // Option 4
+                "Summation"             // Option 5
             };
-            string optionList = $"0. {options[0]}{options[1]}1. {options[2]}{options[3]}2. {options[4]}{options[5]}3. {options[6]}{options[7]}4. {options[8]}";
+            string optionList = $"0. {options[0]}{options[1]}1. {options[2]}{options[3]}2. {options[4]}{options[5]}3. {options[6]}{options[7]}4. {options[8]}{options[9]}5. {options[10]}";
             Console.WriteLine("Welcome!");
             Console.WriteLine(optionList);
             Console.Write("What do you want to do? ");
@@ -84,6 +85,11 @@ namespace NijiCalculator
                     int moduloResult = math.Modulus(moduloX, moduloY);
                     Console.WriteLine($"{moduloX} * {moduloY} = {moduloResult}");
                     break;
+                case 5:     // Summation
+                    Console.Write("Enter a number: ");
+                    int sumX = Convert.ToInt32(Console.ReadLine());
+                    int sumResult = math.Summation(sumX);
+                    Console.WriteLine($"Σ({sumX}) = {sumResult}");
                 default:    // Out of bounds
                     Console.WriteLine("Out of bounds!");
                     Console.WriteLine("Stop using that damned noclip!");
