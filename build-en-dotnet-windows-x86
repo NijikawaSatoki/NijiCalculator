@@ -2,7 +2,7 @@
 
 # This will build the English version for 32-bit Windows
 
-dotnet build en-US/MainProgram.cs en-US/NijiMath.cs \
+dotnet build NijiCalculator.csproj \
 -o release/NijiCalculator \
 --runtime win-x86 \
 --sc
