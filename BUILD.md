@@ -30,13 +30,13 @@ pacman -S mingw-w64-x86_64-mono mingw-w64-x86_64-mono-basic
 
 Now for the actual building part!
 
-To compile the calculator, just run this (for the English version; replace `en-US` with `ja-JP` for the Japanese version):
+To compile the calculator, just run this:
 
 ```
-mcs en-US/MainProgram.cs en-US/NijiMath.cs -out:NijiCalculator
+mcs MainProgram.cs NijiMath.cs -out:release/NijiCalculator
 ```
 
-Windows users may have to change `-out:NijiCalculator` to `-out:NijiCalculator.exe`.
+Windows users may have to change `-out:release/NijiCalculator` to `-out:release/NijiCalculator.exe`.
 
 Alternatively, you could just run the `build-en-mono-linux` script (if you're on Linux or are using Termux on Android) or `build-en-mono-win64` script (if you're on Windows using MSYS2).
 
@@ -56,4 +56,4 @@ For MSYS2 users: You'll be using the Windows install of .NET that you installed.
 
 ### Running the .NET compiler
 
-Not gonna tell you the full command for this... just use the `build-en-dotnet-linux` script (if you're on Linux) or `build-en-dotnet-win64` script (if you're on Windows using MSYS2).
+Not gonna tell you the full command for this... just use the `build-en-dotnet-linux-x64` script (if you're on Linux) or `build-en-dotnet-win64-*` script (where `*` is the architecture of your system (`x86` for x86, `x64` for x86_64, and `arm64` for ARM), if you're on Windows using MSYS2).
