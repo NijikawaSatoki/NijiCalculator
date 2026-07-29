@@ -28,29 +28,20 @@ namespace NijiCalculator
             // Setup all these strings & variables (prolly for some kind of translation?)
             const string TITLE = "\"Niji's Calculator\"\n";
             const string AUTHOR = "Niji System\n\n";
-            string optionAddition = "Addition";
-            string optionSubtraction = "Subtraction";
-            string optionMultiplication = "Multiplication";
-            string optionDivision = "Division";
-            string optionModulus = "Modulus";
-            string optionSummation = "Summation";
-            string optionExponent = "Exponent";
-            string optionSqRoot = "Square root";
-            string optionSine = "Sine";
-            string optionCosine = "Cosine";
-            string optionTangent = "Tangent";
-            List<string> options = new List<string>();
-                options.Add(optionAddition);          // Option  0
-                options.Add(optionSubtraction);       // Option  1
-                options.Add(optionMultiplication);    // Option  2
-                options.Add(optionDivision);          // Option  3
-                options.Add(optionModulus);           // Option  4
-                options.Add(optionSummation);         // Option  5
-                options.Add(optionExponent);          // Option  6
-                options.Add(optionSqRoot);            // Option  7
-                options.Add(optionSine);              // Option  8
-                options.Add(optionCosine);            // Option  9
-                options.Add(optionTangent);           // Option 10
+            var options = new Dictionary<int, string>
+            {
+                { 0, "Addition" },
+                { 1, "Subtraction" },
+                { 2, "Multiplication" },
+                { 3, "Division" },
+                { 4, "Modulus" },
+                { 5, "Summation" },
+                { 6, "Exponent" },
+                { 7, "Square root" },
+                { 8, "Sine" },
+                { 9, "Cosine" },
+                { 10, "Tangent" }
+            };
             string optionList = $" 0. {options[0]}\t 1. {options[1]}\t 2. {options[2]}\n 3. {options[3]}\t 4. {options[4]}\t 5. {options[5]}\n 6. {options[6]}\t 7. {options[7]}\t 8. {options[8]}\n 9. {options[9]}\t10. {options[10]}";
             string welcomeText = "Welcome!";
             string decisionPrompt = "What do you want to do? (Type the number!) ";
