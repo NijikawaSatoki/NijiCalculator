@@ -79,6 +79,21 @@ namespace NijiCalculator
             double sqRoot = Math.Sqrt(square);
             return sqRoot;
         }
+        public double TrigSine(double angle)
+        {
+            double sine = Math.Sin(angle);
+            return sine;
+        }
+        public double TrigCosine(double angle)
+        {
+            double cosine = Math.Cos(angle);
+            return cosine;
+        }
+        public double TrigTangent(double angle)
+        {
+            double tangent = Math.Tan(angle);
+            return tangent;
+        }
     }
 }
 

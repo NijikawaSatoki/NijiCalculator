@@ -36,16 +36,22 @@ namespace NijiCalculator
             string optionSummation = "Summation";
             string optionExponent = "Exponent";
             string optionSqRoot = "Square root";
+            string optionSine = "Sine";
+            string optionCosine = "Cosine";
+            string optionTangent = "Tangent";
             List<string> options = new List<string>();
-                options.Add(optionAddition);          // Option 0
-                options.Add(optionSubtraction);       // Option 1
-                options.Add(optionMultiplication);    // Option 2
-                options.Add(optionDivision);          // Option 3
-                options.Add(optionModulus);           // Option 4
-                options.Add(optionSummation);         // Option 5
-                options.Add(optionExponent);          // Option 6
-                options.Add(optionSqRoot);            // Option 7
-            string optionList = $"0. {options[0]}\t1. {options[1]}\t2. {options[2]}\n3. {options[3]}\t4. {options[4]}\t5. {options[5]}\n6. {options[6]}\t7. {options[7]}";
+                options.Add(optionAddition);          // Option  0
+                options.Add(optionSubtraction);       // Option  1
+                options.Add(optionMultiplication);    // Option  2
+                options.Add(optionDivision);          // Option  3
+                options.Add(optionModulus);           // Option  4
+                options.Add(optionSummation);         // Option  5
+                options.Add(optionExponent);          // Option  6
+                options.Add(optionSqRoot);            // Option  7
+                options.Add(optionSine);              // Option  8
+                options.Add(optionCosine);            // Option  9
+                options.Add(optionTangent);           // Option 10
+            string optionList = $" 0. {options[0]}\t 1. {options[1]}\t 2. {options[2]}\n 3. {options[3]}\t 4. {options[4]}\t 5. {options[5]}\n 6. {options[6]}\t 7. {options[7]}\t 8. {options[8]}\n 9. {options[9]}\t10. {options[10]}";
             string welcomeText = "Welcome!";
             string decisionPrompt = "What do you want to do? (Type the number!) ";
             string enterNumberPrompt0 = "Enter a number: ";
@@ -130,6 +136,27 @@ namespace NijiCalculator
                     double squareRootResult = nijimath.SquareRoot(squareRootX);
                     string equationSquareRoot = $"√{squareRootX} = {squareRootResult}";
                     Console.WriteLine(equationSquareRoot);
+                    break;
+                case 8:     // Sine
+                    Console.Write(enterNumberPrompt0);
+                    double sineX = Convert.ToDouble(Console.ReadLine());
+                    double sineResult = nijimath.TrigSine(sineX);
+                    string equationSine = $"sin {sineX}° = {sineResult}";
+                    Console.WriteLine(equationSine);
+                    break;
+                case 9:     // Cosine
+                    Console.Write(enterNumberPrompt0);
+                    double cosineX = Convert.ToDouble(Console.ReadLine());
+                    double cosineResult = nijimath.TrigCosine(cosineX);
+                    string equationCosine = $"cos {cosineX}° = {cosineResult}";
+                    Console.WriteLine(equationCosine);
+                    break;
+                case 10:    // Tangent
+                    Console.Write(enterNumberPrompt0);
+                    double tangentX = Convert.ToDouble(Console.ReadLine());
+                    double tangentResult = nijimath.TrigTangent(tangentX);
+                    string equationTangent = $"tan {tangentX}° = {tangentResult}";
+                    Console.WriteLine(equationTangent);
                     break;
                 default:    // Out of bounds
                     Console.WriteLine(outOfBoundsMsg0);
