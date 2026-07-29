@@ -68,6 +68,18 @@ namespace NijiCalculator
             sum = x;
             return sum;
         }
+        public double Exponentiation(double powBase, double exponent)
+        {
+            double x = powBase;
+            double y = exponent;
+            double z = Math.Pow(x, y);
+            return z;
+        }
+        public double SquareRoot(double square)
+        {
+            double sqRoot = Math.Sqrt(square);
+            return sqRoot;
+        }
     }
 }
 

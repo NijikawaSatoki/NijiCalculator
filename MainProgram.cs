@@ -34,6 +34,8 @@ namespace NijiCalculator
             string optionDivision = "Division";
             string optionModulus = "Modulus";
             string optionSummation = "Summation";
+            string optionExponent = "Exponent";
+            string optionSqRoot = "Square root";
             List<string> options = new List<string>();
                 options.Add(optionAddition);          // Option 0
                 options.Add(optionSubtraction);       // Option 1
@@ -41,7 +43,9 @@ namespace NijiCalculator
                 options.Add(optionDivision);          // Option 3
                 options.Add(optionModulus);           // Option 4
                 options.Add(optionSummation);         // Option 5
-            string optionList = $"0. {options[0]}\t1. {options[1]}\t2. {options[2]}\n3. {options[3]}\t4. {options[4]}\t5. {options[5]}";
+                options.Add(optionExponent);          // Option 6
+                options.Add(optionSqRoot);            // Option 7
+            string optionList = $"0. {options[0]}\t1. {options[1]}\t2. {options[2]}\n3. {options[3]}\t4. {options[4]}\t5. {options[5]}\n6. {options[6]}\t7. {options[7]}";
             string welcomeText = "Welcome!";
             string decisionPrompt = "What do you want to do? ";
             string enterNumberPrompt0 = "Enter a number: ";
@@ -69,6 +73,13 @@ namespace NijiCalculator
             int sumX = 0;
             int sumResult = 0;
             string equationSummation = $"∑({sumX}) = {sumResult}";
+            double exponentX = 0.00;
+            double exponentY = 0.00;
+            double exponentResult = 0;
+            string equationExponent = $"{exponentX}^{exponentY} = {exponentResult}";
+            double squareRootX = 0;
+            double squareRootResult = 0;
+            string equationSquareRoot = $"√{squareRootX} = {squareRootResult}";
             string outOfBoundsMsg0 = "Out of bounds!";
             string outOfBoundsMsg1 = "Stop using that damned noclip!";
             string sendOffMsg = "Have a nice day.";
@@ -127,6 +138,20 @@ namespace NijiCalculator
                     sumX = Convert.ToInt32(Console.ReadLine());
                     sumResult = math.Summation(sumX);
                     Console.WriteLine(equationSummation);
+                    break;
+                case 6:     // Exponentiation
+                    Console.Write(enterNumberPrompt0);
+                    exponentX = Convert.ToDouble(Console.ReadLine());
+                    Console.Write(enterNumberPrompt1);
+                    exponentY = Convert.ToDouble(Console.ReadLine());
+                    exponentResult = math.Exponentiation(exponentX, exponentY);
+                    Console.WriteLine(equationExponent);
+                    break;
+                case 7:     // Square roots
+                    Console.Write(enterNumberPrompt0);
+                    squareRootX = Convert.ToDouble(Console.ReadLine());
+                    squareRootResult = math.SquareRoot(squareRootX);
+                    Console.WriteLine(equationSquareRoot);
                     break;
                 default:    // Out of bounds
                     Console.WriteLine(outOfBoundsMsg0);
