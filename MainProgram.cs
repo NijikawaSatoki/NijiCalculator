@@ -47,7 +47,7 @@ namespace NijiCalculator
                 options.Add(optionSqRoot);            // Option 7
             string optionList = $"0. {options[0]}\t1. {options[1]}\t2. {options[2]}\n3. {options[3]}\t4. {options[4]}\t5. {options[5]}\n6. {options[6]}\t7. {options[7]}";
             string welcomeText = "Welcome!";
-            string decisionPrompt = "What do you want to do? ";
+            string decisionPrompt = "What do you want to do? (Type the number!) ";
             string enterNumberPrompt0 = "Enter a number: ";
             string enterNumberPrompt1 = "Enter another number: ";
             string outOfBoundsMsg0 = "Out of bounds!";
