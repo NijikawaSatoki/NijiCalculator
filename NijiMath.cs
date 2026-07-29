@@ -20,8 +20,7 @@ namespace NijiCalculator
 {
     class NijiMath
     {
-        private string _errorDivideByZeroMsgEn = "Error!\nYou can't divide by 0!";
-        private string _errorDivideByZeroMsgJa = "注意！\nｘ÷０はできません！";
+        private string _errorDivideByZeroMsg = "Error!\nYou can't divide by 0!";
         public int Addition(int x, int y)
         {
             int z = x + y;
@@ -41,7 +40,7 @@ namespace NijiCalculator
         {
             if (y == 0)
             {
-                Console.WriteLine(_errorDivideByZeroMsgEn);
+                Console.WriteLine(_errorDivideByZeroMsg);
                 Environment.Exit(1);
             }
             double z = x / y;
@@ -51,7 +50,7 @@ namespace NijiCalculator
         {
             if (y == 0)
             {
-                Console.WriteLine(_errorDivideByZeroMsgEn);
+                Console.WriteLine(_errorDivideByZeroMsg);
                 Environment.Exit(1);
             }
             int z = x % y;

@@ -24,7 +24,7 @@ namespace NijiCalculator
         static int Main()
         {
             // Create the objects
-            NijiMath math = new NijiMath();
+            NijiMath nijimath = new NijiMath();
             // Setup all these strings & variables (prolly for some kind of translation?)
             const string TITLE = "\"Niji's Calculator\"\n";
             const string AUTHOR = "Niji System\n\n";
@@ -50,36 +50,6 @@ namespace NijiCalculator
             string decisionPrompt = "What do you want to do? ";
             string enterNumberPrompt0 = "Enter a number: ";
             string enterNumberPrompt1 = "Enter another number: ";
-            int addX = 0;
-            int addY = 0;
-            int addResult = 0;
-            string equationAddition = $"{addX} + {addY} = {addResult}";
-            int subtractX = 0;
-            int subtractY = 0;
-            int subtractResult = 0;
-            string equationSubtraction = $"{subtractX} - {subtractY} = {subtractResult}";
-            int multiplyX = 0;
-            int multiplyY = 0;
-            int multiplyResult = 0;
-            string equationMultiplication = $"{multiplyX} * {multiplyY} = {multiplyResult}";
-            double divideX = 0.00;
-            double divideY = 0.00;
-            double divideResult = 0.00;
-            string equationDivision = $"{divideX} / {divideY} = {divideResult}";
-            int moduloX = 0;
-            int moduloY = 0;
-            int moduloResult = 0;
-            string equationModulus = $"{moduloX} % {moduloY} = {moduloResult}";
-            int sumX = 0;
-            int sumResult = 0;
-            string equationSummation = $"∑({sumX}) = {sumResult}";
-            double exponentX = 0.00;
-            double exponentY = 0.00;
-            double exponentResult = 0;
-            string equationExponent = $"{exponentX}^{exponentY} = {exponentResult}";
-            double squareRootX = 0;
-            double squareRootResult = 0;
-            string equationSquareRoot = $"√{squareRootX} = {squareRootResult}";
             string outOfBoundsMsg0 = "Out of bounds!";
             string outOfBoundsMsg1 = "Stop using that damned noclip!";
             string sendOffMsg = "Have a nice day.";
@@ -95,62 +65,70 @@ namespace NijiCalculator
             {
                 case 0:     // Addition
                     Console.Write(enterNumberPrompt0);
-                    addX = Convert.ToInt32(Console.ReadLine());
+                    int addX = Convert.ToInt32(Console.ReadLine());
                     Console.Write(enterNumberPrompt1);
-                    addY = Convert.ToInt32(Console.ReadLine());
-                    addResult = math.Addition(addX, addY);
+                    int addY = Convert.ToInt32(Console.ReadLine());
+                    int addResult = nijimath.Addition(addX, addY);
+                    string equationAddition = $"{addX} + {addY} = {addResult}";
                     Console.WriteLine(equationAddition);
                     break;
                 case 1:     // Subtraction
                     Console.Write(enterNumberPrompt0);
-                    subtractX = Convert.ToInt32(Console.ReadLine());
+                    int subtractX = Convert.ToInt32(Console.ReadLine());
                     Console.Write(enterNumberPrompt1);
-                    subtractY = Convert.ToInt32(Console.ReadLine());
-                    subtractResult = math.Subtraction(subtractX, subtractY);
+                    int subtractY = Convert.ToInt32(Console.ReadLine());
+                    int subtractResult = nijimath.Subtraction(subtractX, subtractY);
+                    string equationSubtraction = $"{subtractX} - {subtractY} = {subtractResult}";
                     Console.WriteLine(equationSubtraction);
                     break;
                 case 2:     // Multiplication
                     Console.Write(enterNumberPrompt0);
-                    multiplyX = Convert.ToInt32(Console.ReadLine());
+                    int multiplyX = Convert.ToInt32(Console.ReadLine());
                     Console.Write(enterNumberPrompt1);
-                    multiplyY = Convert.ToInt32(Console.ReadLine());
-                    multiplyResult = math.Multiplication(multiplyX, multiplyY);
+                    int multiplyY = Convert.ToInt32(Console.ReadLine());
+                    int multiplyResult = nijimath.Multiplication(multiplyX, multiplyY);
+                    string equationMultiplication = $"{multiplyX} * {multiplyY} = {multiplyResult}";
                     Console.WriteLine(equationMultiplication);
                     break;
                 case 3:     // Division
                     Console.Write(enterNumberPrompt0);
-                    divideX = Convert.ToDouble(Console.ReadLine());
+                    double divideX = Convert.ToDouble(Console.ReadLine());
                     Console.Write(enterNumberPrompt1);
-                    divideY = Convert.ToDouble(Console.ReadLine());
-                    divideResult = math.Division(divideX, divideY);
+                    double divideY = Convert.ToDouble(Console.ReadLine());
+                    double divideResult = nijimath.Division(divideX, divideY);
+                    string equationDivision = $"{divideX} / {divideY} = {divideResult}";
                     Console.WriteLine(equationDivision);
                     break;
                 case 4:     // Modulus
                     Console.Write(enterNumberPrompt0);
-                    moduloX = Convert.ToInt32(Console.ReadLine());
+                    int moduloX = Convert.ToInt32(Console.ReadLine());
                     Console.Write(enterNumberPrompt1);
-                    moduloY = Convert.ToInt32(Console.ReadLine());
-                    moduloResult = math.Modulus(moduloX, moduloY);
+                    int moduloY = Convert.ToInt32(Console.ReadLine());
+                    int moduloResult = nijimath.Modulus(moduloX, moduloY);
+                    string equationModulus = $"{moduloX} % {moduloY} = {moduloResult}";
                     Console.WriteLine(equationModulus);
                     break;
                 case 5:     // Summation
                     Console.Write(enterNumberPrompt0);
-                    sumX = Convert.ToInt32(Console.ReadLine());
-                    sumResult = math.Summation(sumX);
+                    int sumX = Convert.ToInt32(Console.ReadLine());
+                    int sumResult = nijimath.Summation(sumX);
+                    string equationSummation = $"∑({sumX}) = {sumResult}";
                     Console.WriteLine(equationSummation);
                     break;
                 case 6:     // Exponentiation
                     Console.Write(enterNumberPrompt0);
-                    exponentX = Convert.ToDouble(Console.ReadLine());
+                    double exponentX = Convert.ToDouble(Console.ReadLine());
                     Console.Write(enterNumberPrompt1);
-                    exponentY = Convert.ToDouble(Console.ReadLine());
-                    exponentResult = math.Exponentiation(exponentX, exponentY);
+                    double exponentY = Convert.ToDouble(Console.ReadLine());
+                    double exponentResult = nijimath.Exponentiation(exponentX, exponentY);
+                    string equationExponent = $"{exponentX}^{exponentY} = {exponentResult}";
                     Console.WriteLine(equationExponent);
                     break;
                 case 7:     // Square roots
                     Console.Write(enterNumberPrompt0);
-                    squareRootX = Convert.ToDouble(Console.ReadLine());
-                    squareRootResult = math.SquareRoot(squareRootX);
+                    double squareRootX = Convert.ToDouble(Console.ReadLine());
+                    double squareRootResult = nijimath.SquareRoot(squareRootX);
+                    string equationSquareRoot = $"√{squareRootX} = {squareRootResult}";
                     Console.WriteLine(equationSquareRoot);
                     break;
                 default:    // Out of bounds
