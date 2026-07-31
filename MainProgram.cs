@@ -30,19 +30,22 @@ namespace NijiCalculator
             const string AUTHOR = "Niji System\n\n";
             var options = new Dictionary<int, string>
             {
-                { 0, "Addition" },
-                { 1, "Subtraction" },
-                { 2, "Multiplication" },
-                { 3, "Division" },
-                { 4, "Modulus" },
-                { 5, "Summation" },
-                { 6, "Exponent" },
-                { 7, "Square root" },
-                { 8, "Sine" },
-                { 9, "Cosine" },
-                { 10, "Tangent" }
+                {  0, "Addition" },
+                {  1, "Subtraction" },
+                {  2, "Multiplication" },
+                {  3, "Division" },
+                {  4, "Modulus" },
+                {  5, "Summation" },
+                {  6, "Exponent" },
+                {  7, "Square root" },
+                {  8, "Sine" },
+                {  9, "Cosine" },
+                { 10, "Tangent" },
+                { 11, "Natural Log" },
+                { 12, "Base 2 Log" },
+                { 13, "Base 10 Log" }
             };
-            string optionList = $" 0. {options[0]}\t 1. {options[1]}\t 2. {options[2]}\n 3. {options[3]}\t 4. {options[4]}\t 5. {options[5]}\n 6. {options[6]}\t 7. {options[7]}\t 8. {options[8]}\n 9. {options[9]}\t10. {options[10]}";
+            string optionList = $" 0. {options[0]}\t 1. {options[1]}\t 2. {options[2]}\n 3. {options[3]}\t 4. {options[4]}\t 5. {options[5]}\n 6. {options[6]}\t 7. {options[7]}\t 8. {options[8]}\n 9. {options[9]}\t10. {options[10]}\t11. {options[11]}\n12. {options[12]}\t13. {options[13]}";
             string welcomeText = "Welcome!";
             string decisionPrompt = "What do you want to do? (Type the number!) ";
             string enterNumberPrompt0 = "Enter a number: ";
@@ -148,6 +151,27 @@ namespace NijiCalculator
                     double tangentResult = nijimath.TrigTangent(tangentX);
                     string equationTangent = $"tan {tangentX}° = {tangentResult}";
                     Console.WriteLine(equationTangent);
+                    break;
+                case 11:    // Natural logarithm
+                    Console.Write(enterNumberPrompt0);
+                    double natLogX = Convert.ToDouble(Console.ReadLine());
+                    double natLogResult = nijimath.NaturalLogarithm(natLogX);
+                    string equationNatLog = $"ln {natLogX} = {natLogResult}";
+                    Console.WriteLine(equationNatLog);
+                    break;
+                case 12:    // Base 2 logarithm
+                    Console.Write(enterNumberPrompt0);
+                    double base2LogX = Convert.ToDouble(Console.ReadLine());
+                    double base2LogResult = nijimath.Base2Logarithm(base2LogX);
+                    string equationBase2Log = $"log2 {base2LogX} = {base2LogResult}";
+                    Console.WriteLine(equationBase2Log);
+                    break;
+                case 13:    // Base 10 logarithm
+                    Console.Write(enterNumberPrompt0);
+                    double base10LogX = Convert.ToDouble(Console.ReadLine());
+                    double base10LogResult = nijimath.Base10Logarithm(base10LogX);
+                    string equationBase10Log = $"log10 {base10LogX} = {base10LogResult}";
+                    Console.WriteLine(equationBase10Log);
                     break;
                 default:    // Out of bounds
                     Console.WriteLine(outOfBoundsMsg0);

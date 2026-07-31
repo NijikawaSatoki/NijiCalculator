@@ -94,6 +94,21 @@ namespace NijiCalculator
             double tangent = Math.Tan(angle);
             return tangent;
         }
+        public double NaturalLogarithm(double x)
+        {
+            double log = Math.Log(x);
+            return log;
+        }
+        public double Base2Logarithm(double x)
+        {
+            double log = Math.Log2(x);
+            return log;
+        }
+        public double Base10Logarithm(double x)
+        {
+            double log = Math.Log10(x);
+            return log;
+        }
     }
 }
 
