@@ -87,7 +87,7 @@ namespace NijiCalculator
                     Console.Write(enterNumberPrompt1);
                     int multiplyY = Convert.ToInt32(Console.ReadLine());
                     int multiplyResult = nijimath.Multiplication(multiplyX, multiplyY);
-                    string equationMultiplication = $"{multiplyX} * {multiplyY} = {multiplyResult}";
+                    string equationMultiplication = $"{multiplyX} × {multiplyY} = {multiplyResult}";
                     Console.WriteLine(equationMultiplication);
                     break;
                 case 3:     // Division
@@ -96,7 +96,7 @@ namespace NijiCalculator
                     Console.Write(enterNumberPrompt1);
                     double divideY = Convert.ToDouble(Console.ReadLine());
                     double divideResult = nijimath.Division(divideX, divideY);
-                    string equationDivision = $"{divideX} / {divideY} = {divideResult}";
+                    string equationDivision = $"{divideX} ÷ {divideY} = {divideResult}";
                     Console.WriteLine(equationDivision);
                     break;
                 case 4:     // Modulus
@@ -105,7 +105,7 @@ namespace NijiCalculator
                     Console.Write(enterNumberPrompt1);
                     int moduloY = Convert.ToInt32(Console.ReadLine());
                     int moduloResult = nijimath.Modulus(moduloX, moduloY);
-                    string equationModulus = $"{moduloX} % {moduloY} = {moduloResult}";
+                    string equationModulus = $"{moduloX} mod {moduloY} = {moduloResult}";
                     Console.WriteLine(equationModulus);
                     break;
                 case 5:     // Summation
@@ -163,14 +163,14 @@ namespace NijiCalculator
                     Console.Write(enterNumberPrompt0);
                     double base2LogX = Convert.ToDouble(Console.ReadLine());
                     double base2LogResult = nijimath.Base2Logarithm(base2LogX);
-                    string equationBase2Log = $"log2 {base2LogX} = {base2LogResult}";
+                    string equationBase2Log = $"log₂ {base2LogX} = {base2LogResult}";
                     Console.WriteLine(equationBase2Log);
                     break;
                 case 13:    // Base 10 logarithm
                     Console.Write(enterNumberPrompt0);
                     double base10LogX = Convert.ToDouble(Console.ReadLine());
                     double base10LogResult = nijimath.Base10Logarithm(base10LogX);
-                    string equationBase10Log = $"log10 {base10LogX} = {base10LogResult}";
+                    string equationBase10Log = $"log₁₀ {base10LogX} = {base10LogResult}";
                     Console.WriteLine(equationBase10Log);
                     break;
                 default:    // Out of bounds

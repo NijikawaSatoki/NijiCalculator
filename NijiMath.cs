@@ -67,9 +67,9 @@ namespace NijiCalculator
             sum = x;
             return sum;
         }
-        public double Exponentiation(double powBase, double exponent)
+        public double Exponentiation(double @base, double exponent)
         {
-            double x = powBase;
+            double x = @base;
             double y = exponent;
             double z = Math.Pow(x, y);
             return z;
