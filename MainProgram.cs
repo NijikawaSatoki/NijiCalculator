@@ -44,10 +44,10 @@ namespace NijiCalculator
                 { 11, "Natural Log" },
                 { 12, "Base 2 Log" },
                 { 13, "Base 10 Log" },
-                { 14, "" },
+                { 14, "Average" },
                 { 15, "" }
             };
-            string optionList = $" 0. {options[0]}\t 1. {options[1]}\t 2. {options[2]}\n 3. {options[3]}\t 4. {options[4]}\t 5. {options[5]}\n 6. {options[6]}\t 7. {options[7]}\t 8. {options[8]}\n 9. {options[9]}\t10. {options[10]}\t11. {options[11]}\n12. {options[12]}\t13. {options[13]}";
+            string optionList = $" 0. {options[0]}\t 1. {options[1]}\t 2. {options[2]}\n 3. {options[3]}\t 4. {options[4]}\t 5. {options[5]}\n 6. {options[6]}\t 7. {options[7]}\t 8. {options[8]}\n 9. {options[9]}\t10. {options[10]}\t11. {options[11]}\n12. {options[12]}\t13. {options[13]}\t{options[14]}";
             string welcomeText = "Welcome!";
             string decisionPrompt = "What do you want to do? (Type the number!) ";
             string enterNumberPrompt0 = "Enter a number: ";
@@ -245,8 +245,24 @@ namespace NijiCalculator
                     string equationBase10Log = $"log₁₀ {base10LogX} = {base10LogResult}";
                     Console.WriteLine(equationBase10Log);
                     break;
-                case 14:    // 
-
+                case 14:    // Average
+                    // Explain what averaging does
+                    string averageInfo = "\n";
+                    Console.WriteLine(averageInfo);
+                    // Prompt the user to input the number
+                    List<double> numberArray = new List<double>();
+                    double averageX = 0.00;
+                    // User inputs the numbers that they want to average up until a '0' is inputted
+                    do
+                    {
+                        Console.Write("Please enter a number.\nEnter \"0\" to stop: ");
+                        averageX = Convert.ToDouble(Console.ReadLine());
+                        numberArray.Add(averageX);
+                    } while (averageX != 0) ;
+                    // Calculate the base 10 logarithm and print the result
+                    double averageResult = nijimath.AverageSum(numberArray);
+                    string equationAverage = $"The average of all the numbers you gave is {averageResult}.";
+                    Console.WriteLine(equationAverage);
                     break;
                 case 15:    // 
 

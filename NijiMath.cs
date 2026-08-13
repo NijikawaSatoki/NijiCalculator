@@ -15,12 +15,14 @@
  */
 
 using System;
+using System.Collections.Generic;
 
 namespace NijiCalculator
 {
     class NijiMath
     {
         private string _errorDivideByZeroMsg = "Error!\nYou can't divide by 0!";
+        private string _errorArrayLengthZeroMsg = "Error!\nThe length of the array is 0!\nYou can't divide by 0!";
         public int Addition(int x, int y)
         {
             int z = x + y;
@@ -108,6 +110,22 @@ namespace NijiCalculator
         {
             double log = Math.Log10(x);
             return log;
+        }
+        public double AverageSum(List<double> items)
+        {
+            double average = 0;
+            double sum = 0;
+            if (items.Count == 0)
+            {
+                Console.WriteLine(_errorArrayLengthZeroMsg);
+                Environment.Exit(1);
+            }
+            for (int i = 0; i < items.Count; i++)
+            {
+                sum += items[i];
+            }
+            average = sum / items.Count;
+            return average;
         }
     }
 }
