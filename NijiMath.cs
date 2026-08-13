@@ -115,11 +115,13 @@ namespace NijiCalculator
         {
             double average = 0;
             double sum = 0;
+            // For edge cases where the list somehow has a length of 0
             if (items.Count == 0)
             {
                 Console.WriteLine(_errorArrayLengthZeroMsg);
                 Environment.Exit(1);
             }
+            // Average it all up :3
             for (int i = 0; i < items.Count; i++)
             {
                 sum += items[i];
