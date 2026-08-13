@@ -245,6 +245,12 @@ namespace NijiCalculator
                     string equationBase10Log = $"log₁₀ {base10LogX} = {base10LogResult}";
                     Console.WriteLine(equationBase10Log);
                     break;
+                case 14:    // 
+
+                    break;
+                case 15:    // 
+
+                    break;
                 default:    // Out of bounds
                     Console.WriteLine(outOfBoundsMsg0);
                     Console.WriteLine(outOfBoundsMsg1);
