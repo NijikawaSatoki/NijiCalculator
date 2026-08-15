@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# NOTICE: THIS BUILD SCRIPT IS ONLY FOR LINUX AND TERMUX!
-
-# This script simply runs mono's compiler
-
-mcs MainProgram.cs NijiMath.cs -out:release/NijiCalculator

@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# NOTICE: THIS BUILD SCRIPT IS ONLY FOR 64-BIT WINDOWS!
-
-# This script simply runs mono's compiler
-
-mcs MainProgram.cs NijiMath.cs -out:test/NijiCalculator.exe
