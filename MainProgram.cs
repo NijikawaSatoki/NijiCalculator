@@ -45,9 +45,9 @@ namespace NijiCalculator
                 { 12, "Base 2 Log" },
                 { 13, "Base 10 Log" },
                 { 14, "Average" },
-                { 15, "" }
+                { 15, "Temperature" }
             };
-            string optionList = $" 0. {options[0]}\t 1. {options[1]}\t 2. {options[2]}\n 3. {options[3]}\t 4. {options[4]}\t 5. {options[5]}\n 6. {options[6]}\t 7. {options[7]}\t 8. {options[8]}\n 9. {options[9]}\t10. {options[10]}\t11. {options[11]}\n12. {options[12]}\t13. {options[13]}\t{options[14]}";
+            string optionList = $" 0. {options[0]}\t 1. {options[1]}\t 2. {options[2]}\n 3. {options[3]}\t 4. {options[4]}\t 5. {options[5]}\n 6. {options[6]}\t 7. {options[7]}\t 8. {options[8]}\n 9. {options[9]}\t10. {options[10]}\t11. {options[11]}\n12. {options[12]}\t13. {options[13]}\t{options[14]}\n{options[15]}";
             string welcomeText = "Welcome!";
             string decisionPrompt = "What do you want to do? (Type the number!) ";
             string enterNumberPrompt0 = "Enter a number: ";
@@ -264,8 +264,75 @@ namespace NijiCalculator
                     string equationAverage = $"The average of all the numbers you gave is {averageResult}.";
                     Console.WriteLine(equationAverage);
                     break;
-                case 15:    // 
-
+                case 15:    // Temperature
+                    Console.WriteLine("Let's convert temperatures! But first...\n");
+                    // Setup the choices
+                    var temperatureOptions = new Dictionary<int, string>
+                    {
+                        { 0, "Celsius to Fahrenheit" },
+                        { 1, "Celsius to Kelvin" },
+                        { 2, "Fahrenheit to Celsius" },
+                        { 3, "Fahrenheit to Kelvin" },
+                        { 4, "Kelvin to Celsius" },
+                        { 5, "Kelvin to Fahrenheit" }
+                    };
+                    string temperatureOptionList = $"0. {temperatureOptions[0]}\t1. {temperatureOptions[1]}\n2. {temperatureOptions[2]}\t3. {temperatureOptions[3]}\n4. {temperatureOptions[4]}\t\t5. {temperatureOptions[5]}";
+                    string temperatureDecisionPrompt = "What do you want to do? (Type the number!) ";
+                    // Display choices and receive the user's input on what they want to do
+                    Console.WriteLine(temperatureOptionList);
+                    Console.WriteLine(temperatureDecisionPrompt);
+                    int temperatureChoice = Convert.ToInt32(Console.ReadLine());
+                    // Input prompt stuffs
+                    string celsiusPrompt = "Please type in the temperature in °C: ";
+                    string fahrenheitPrompt = "Please type in the temperature in °F: ";
+                    string kelvinPrompt = "Please type in the temperature in kelvin: ";
+                    double temperature = 0.00d;
+                    double resultTemperature = 0.0000d;
+                    // Execute based on user's choice
+                    switch (temperatureChoice)
+                    {
+                        case 0:    // Celsius to Fahrenheit
+                            Console.Write(celsiusPrompt);
+                            temperature = Convert.ToDouble(Console.ReadLine());
+                            resultTemperature = nijimath.CelsiusToFahrenheit(temperature);
+                            Console.WriteLine($"{temperature} °C ≈ {resultTemperature} °F");
+                            break;
+                        case 1:    // Celsius to Kelvin
+                            Console.Write(celsiusPrompt);
+                            temperature = Convert.ToDouble(Console.ReadLine());
+                            resultTemperature = nijimath.CelsiusToKelvin(temperature);
+                            Console.WriteLine($"{temperature} °C ≈ {resultTemperature} K");
+                            break;
+                        case 2:    // Fahrenheit to Celsius
+                            Console.Write(fahrenheitPrompt);
+                            temperature = Convert.ToDouble(Console.ReadLine());
+                            resultTemperature = nijimath.FahrenheitToCelsius(temperature);
+                            Console.WriteLine($"{temperature} °F ≈ {resultTemperature} °C");
+                            break;
+                        case 3:    // Fahrenheit to Kelvin
+                            Console.Write(fahrenheitPrompt);
+                            temperature = Convert.ToDouble(Console.ReadLine());
+                            resultTemperature = nijimath.FahrenheitToKelvin(temperature);
+                            Console.WriteLine($"{temperature} °F ≈ {resultTemperature} K");
+                            break;
+                        case 4:    // Kelvin to Celsius
+                            Console.Write(kelvinPrompt);
+                            temperature = Convert.ToDouble(Console.ReadLine());
+                            resultTemperature = nijimath.KelvinToCelsius(temperature);
+                            Console.WriteLine($"{temperature} K ≈ {resultTemperature} °C");
+                            break;
+                        case 5:    // Kelvin to Fahrenheit
+                            Console.Write(kelvinPrompt);
+                            temperature = Convert.ToDouble(Console.ReadLine());
+                            resultTemperature = nijimath.KelvinToFahrenheit(temperature);
+                            Console.WriteLine($"{temperature} K ≈ {resultTemperature} °F");
+                            break;
+                        default:    // Out of bounds
+                            Console.WriteLine(outOfBoundsMsg0);
+                            Console.WriteLine(outOfBoundsMsg1);
+                            break;
+                        // End of switch block
+                    }
                     break;
                 default:    // Out of bounds
                     Console.WriteLine(outOfBoundsMsg0);
