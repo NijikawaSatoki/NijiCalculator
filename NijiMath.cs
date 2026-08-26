@@ -198,11 +198,11 @@ namespace NijiCalculator
             }
             else if (fahrenheit == WATER_FREEZING_POINT)
             {
-                kelvin = 0.00d;
+                kelvin = 273.15d;
             }
             else if (fahrenheit == WATER_BOILING_POINT)
             {
-                kelvin = 0.00d;
+                kelvin = 373.15d;
             }
             else
             {
