@@ -40,6 +40,10 @@ Windows users may have to change `-out:release/NijiCalculator` to `-out:release/
 
 Alternatively, you could just run the `build-en-mono-linux` script (if you're on Linux or are using Termux on Android) or `build-en-mono-win64` script (if you're on Windows using MSYS2).
 
+**NOTE:** `mono` will no longer work with this project due to using functionality from after the last version of .NET that `mono` supports.
+As such, please disregard the build instruction using `mono`.
+Use the instructions for .NET instead, detailed below!
+
 ## .NET
 
 This is the current way to compile.
@@ -53,6 +57,7 @@ sudo pacman -S dotnet-sdk dotnet-runtime
 ```
 
 For MSYS2 users: You'll be using the Windows install of .NET that you installed.
+Just make sure that you add the directory to `$PATH`.
 
 ### Running the .NET compiler
 
