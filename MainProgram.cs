@@ -25,6 +25,7 @@ namespace NijiCalculator
         {
             // Create the objects
             NijiMath nijimath = new NijiMath();
+            NijiConvenience convenient = new NijiConvenience();
             // Setup all these strings & variables (prolly for some kind of translation?)
             const string TITLE = "\"Niji's Calculator\"\n";
             const string AUTHOR = "Niji System\n\n";
@@ -47,7 +48,7 @@ namespace NijiCalculator
                 { 14, "Average" },
                 { 15, "Temperature" }
             };
-            string optionList = $" 0. {options[0]}\t 1. {options[1]}\t 2. {options[2]}\n 3. {options[3]}\t 4. {options[4]}\t 5. {options[5]}\n 6. {options[6]}\t 7. {options[7]}\t 8. {options[8]}\n 9. {options[9]}\t10. {options[10]}\t11. {options[11]}\n12. {options[12]}\t13. {options[13]}\t{options[14]}\n{options[15]}";
+            string optionList = $" 0. {options[0]}\t 1. {options[1]}\t 2. {options[2]}\n 3. {options[3]}\t 4. {options[4]}\t 5. {options[5]}\n 6. {options[6]}\t 7. {options[7]}\t 8. {options[8]}\n 9. {options[9]}\t10. {options[10]}\t11. {options[11]}\n12. {options[12]}\t13. {options[13]}\t14. {options[14]}\n15. {options[15]}";
             string welcomeText = "Welcome!";
             string decisionPrompt = "What do you want to do? (Type the number!) ";
             string enterNumberPrompt0 = "Enter a number: ";
@@ -61,7 +62,7 @@ namespace NijiCalculator
             Console.WriteLine(welcomeText);
             Console.WriteLine(optionList);
             Console.Write(decisionPrompt);
-            int choice = Convert.ToInt32(Console.ReadLine());
+            int choice = convenient.Read32BitNumberInput();
             // Execute
             switch (choice)
             {
@@ -71,9 +72,9 @@ namespace NijiCalculator
                     Console.WriteLine(additionInfo);
                     // Prompt the user to input the numbers
                     Console.Write(enterNumberPrompt0);
-                    int addX = Convert.ToInt32(Console.ReadLine());
+                    int addX = convenient.Read32BitNumberInput();
                     Console.Write(enterNumberPrompt1);
-                    int addY = Convert.ToInt32(Console.ReadLine());
+                    int addY = convenient.Read32BitNumberInput();
                     // Add the numbers and print the result
                     int addResult = nijimath.Addition(addX, addY);
                     string equationAddition = $"{addX} + {addY} = {addResult}";
@@ -85,9 +86,9 @@ namespace NijiCalculator
                     Console.WriteLine(subtractionInfo);
                     // Prompt the user to input the numbers
                     Console.Write(enterNumberPrompt0);
-                    int subtractX = Convert.ToInt32(Console.ReadLine());
+                    int subtractX = convenient.Read32BitNumberInput();
                     Console.Write(enterNumberPrompt1);
-                    int subtractY = Convert.ToInt32(Console.ReadLine());
+                    int subtractY = convenient.Read32BitNumberInput();
                     // Subtract the numbers and print the result
                     int subtractResult = nijimath.Subtraction(subtractX, subtractY);
                     string equationSubtraction = $"{subtractX} - {subtractY} = {subtractResult}";
@@ -99,9 +100,9 @@ namespace NijiCalculator
                     Console.WriteLine(multiplicationInfo);
                     // Prompt the user to input the numbers
                     Console.Write(enterNumberPrompt0);
-                    int multiplyX = Convert.ToInt32(Console.ReadLine());
+                    int multiplyX = convenient.Read32BitNumberInput();
                     Console.Write(enterNumberPrompt1);
-                    int multiplyY = Convert.ToInt32(Console.ReadLine());
+                    int multiplyY = convenient.Read32BitNumberInput();
                     // Multiply the numbers and print the result
                     int multiplyResult = nijimath.Multiplication(multiplyX, multiplyY);
                     string equationMultiplication = $"{multiplyX} × {multiplyY} = {multiplyResult}";
@@ -113,9 +114,9 @@ namespace NijiCalculator
                     Console.WriteLine(divisionInfo);
                     // Prompt the user to input the numbers
                     Console.Write(enterNumberPrompt0);
-                    double divideX = Convert.ToDouble(Console.ReadLine());
+                    double divideX = convenient.ReadFloatingPointNumberInput();
                     Console.Write(enterNumberPrompt1);
-                    double divideY = Convert.ToDouble(Console.ReadLine());
+                    double divideY = convenient.ReadFloatingPointNumberInput();
                     // Divide the numbers and print the result
                     double divideResult = nijimath.Division(divideX, divideY);
                     string equationDivision = $"{divideX} ÷ {divideY} = {divideResult}";
@@ -127,9 +128,9 @@ namespace NijiCalculator
                     Console.WriteLine(modulusInfo);
                     // Prompt the user to input the numbers
                     Console.Write(enterNumberPrompt0);
-                    int moduloX = Convert.ToInt32(Console.ReadLine());
+                    int moduloX = convenient.Read32BitNumberInput();
                     Console.Write(enterNumberPrompt1);
-                    int moduloY = Convert.ToInt32(Console.ReadLine());
+                    int moduloY = convenient.Read32BitNumberInput();
                     // Perform the modulus and print the result
                     int moduloResult = nijimath.Modulus(moduloX, moduloY);
                     string equationModulus = $"{moduloX} mod {moduloY} = {moduloResult}";
@@ -141,7 +142,7 @@ namespace NijiCalculator
                     Console.WriteLine(summationInfo);
                     // Prompt the user to input the number
                     Console.Write(enterNumberPrompt0);
-                    int sumX = Convert.ToInt32(Console.ReadLine());
+                    int sumX = convenient.Read32BitNumberInput();
                     // Calculate the sum and print the result
                     int sumResult = nijimath.Summation(sumX);
                     string equationSummation = $"∑({sumX}) = {sumResult}";
@@ -153,9 +154,9 @@ namespace NijiCalculator
                     Console.WriteLine(exponentiationInfo);
                     // Prompt the user to input the numbers
                     Console.Write(enterNumberPrompt0);
-                    double exponentX = Convert.ToDouble(Console.ReadLine());
+                    double exponentX = convenient.ReadFloatingPointNumberInput();
                     Console.Write(enterNumberPrompt1);
-                    double exponentY = Convert.ToDouble(Console.ReadLine());
+                    double exponentY = convenient.ReadFloatingPointNumberInput();
                     // Calculate the exponent and print the result
                     double exponentResult = nijimath.Exponentiation(exponentX, exponentY);
                     string equationExponent = $"{exponentX}^{exponentY} = {exponentResult}";
@@ -167,7 +168,7 @@ namespace NijiCalculator
                     Console.WriteLine(squareRootInfo);
                     // Prompt the user to input the number
                     Console.Write(enterNumberPrompt0);
-                    double squareRootX = Convert.ToDouble(Console.ReadLine());
+                    double squareRootX = convenient.ReadFloatingPointNumberInput();
                     // Calculate the square root and print the result
                     double squareRootResult = nijimath.SquareRoot(squareRootX);
                     string equationSquareRoot = $"√{squareRootX} = {squareRootResult}";
@@ -179,7 +180,7 @@ namespace NijiCalculator
                     Console.WriteLine(sineInfo);
                     // Prompt the user to input the angle
                     Console.Write(enterNumberPrompt0);
-                    double sineX = Convert.ToDouble(Console.ReadLine());
+                    double sineX = convenient.ReadFloatingPointNumberInput();
                     // Calculate the sine and print the result
                     double sineResult = nijimath.TrigSine(sineX);
                     string equationSine = $"sin {sineX}° = {sineResult}";
@@ -191,7 +192,7 @@ namespace NijiCalculator
                     Console.WriteLine(cosineInfo);
                     // Prompt the user to input the angle
                     Console.Write(enterNumberPrompt0);
-                    double cosineX = Convert.ToDouble(Console.ReadLine());
+                    double cosineX = convenient.ReadFloatingPointNumberInput();
                     // Calculate the cosine and print the result
                     double cosineResult = nijimath.TrigCosine(cosineX);
                     string equationCosine = $"cos {cosineX}° = {cosineResult}";
@@ -203,7 +204,7 @@ namespace NijiCalculator
                     Console.WriteLine(tangentInfo);
                     // Prompt the user to input the angle
                     Console.Write(enterNumberPrompt0);
-                    double tangentX = Convert.ToDouble(Console.ReadLine());
+                    double tangentX = convenient.ReadFloatingPointNumberInput();
                     // Calculate the tangent and print the result
                     double tangentResult = nijimath.TrigTangent(tangentX);
                     string equationTangent = $"tan {tangentX}° = {tangentResult}";
@@ -215,7 +216,7 @@ namespace NijiCalculator
                     Console.WriteLine(naturalLogInfo);
                     // Prompt the user to input the number
                     Console.Write(enterNumberPrompt0);
-                    double natLogX = Convert.ToDouble(Console.ReadLine());
+                    double natLogX = convenient.ReadFloatingPointNumberInput();
                     // Calculate the natural logarithm and print the result
                     double natLogResult = nijimath.NaturalLogarithm(natLogX);
                     string equationNatLog = $"ln {natLogX} = {natLogResult}";
@@ -227,7 +228,7 @@ namespace NijiCalculator
                     Console.WriteLine(base2LogInfo);
                     // Prompt the user to input the number
                     Console.Write(enterNumberPrompt0);
-                    double base2LogX = Convert.ToDouble(Console.ReadLine());
+                    double base2LogX = convenient.ReadFloatingPointNumberInput();
                     // Calculate the base 2 logarithm and print the result
                     double base2LogResult = nijimath.Base2Logarithm(base2LogX);
                     string equationBase2Log = $"log₂ {base2LogX} = {base2LogResult}";
@@ -239,7 +240,7 @@ namespace NijiCalculator
                     Console.WriteLine(base10LogInfo);
                     // Prompt the user to input the number
                     Console.Write(enterNumberPrompt0);
-                    double base10LogX = Convert.ToDouble(Console.ReadLine());
+                    double base10LogX = convenient.ReadFloatingPointNumberInput();
                     // Calculate the base 10 logarithm and print the result
                     double base10LogResult = nijimath.Base10Logarithm(base10LogX);
                     string equationBase10Log = $"log₁₀ {base10LogX} = {base10LogResult}";
@@ -256,7 +257,7 @@ namespace NijiCalculator
                     do
                     {
                         Console.Write("Please enter a number.\nEnter \"0\" to stop: ");
-                        averageX = Convert.ToDouble(Console.ReadLine());
+                        averageX = convenient.ReadFloatingPointNumberInput();
                         numberArray.Add(averageX);
                     } while (averageX != 0) ;
                     // Calculate the base 10 logarithm and print the result
@@ -281,7 +282,7 @@ namespace NijiCalculator
                     // Display choices and receive the user's input on what they want to do
                     Console.WriteLine(temperatureOptionList);
                     Console.WriteLine(temperatureDecisionPrompt);
-                    int temperatureChoice = Convert.ToInt32(Console.ReadLine());
+                    int temperatureChoice = convenient.Read32BitNumberInput();
                     // Input prompt stuffs
                     string celsiusPrompt = "Please type in the temperature in °C: ";
                     string fahrenheitPrompt = "Please type in the temperature in °F: ";
@@ -293,37 +294,37 @@ namespace NijiCalculator
                     {
                         case 0:    // Celsius to Fahrenheit
                             Console.Write(celsiusPrompt);
-                            temperature = Convert.ToDouble(Console.ReadLine());
+                            temperature = convenient.ReadFloatingPointNumberInput();
                             resultTemperature = nijimath.CelsiusToFahrenheit(temperature);
                             Console.WriteLine($"{temperature} °C ≈ {resultTemperature} °F");
                             break;
                         case 1:    // Celsius to Kelvin
                             Console.Write(celsiusPrompt);
-                            temperature = Convert.ToDouble(Console.ReadLine());
+                            temperature = convenient.ReadFloatingPointNumberInput();
                             resultTemperature = nijimath.CelsiusToKelvin(temperature);
                             Console.WriteLine($"{temperature} °C ≈ {resultTemperature} K");
                             break;
                         case 2:    // Fahrenheit to Celsius
                             Console.Write(fahrenheitPrompt);
-                            temperature = Convert.ToDouble(Console.ReadLine());
+                            temperature = convenient.ReadFloatingPointNumberInput();
                             resultTemperature = nijimath.FahrenheitToCelsius(temperature);
                             Console.WriteLine($"{temperature} °F ≈ {resultTemperature} °C");
                             break;
                         case 3:    // Fahrenheit to Kelvin
                             Console.Write(fahrenheitPrompt);
-                            temperature = Convert.ToDouble(Console.ReadLine());
+                            temperature = convenient.ReadFloatingPointNumberInput();
                             resultTemperature = nijimath.FahrenheitToKelvin(temperature);
                             Console.WriteLine($"{temperature} °F ≈ {resultTemperature} K");
                             break;
                         case 4:    // Kelvin to Celsius
                             Console.Write(kelvinPrompt);
-                            temperature = Convert.ToDouble(Console.ReadLine());
+                            temperature = convenient.ReadFloatingPointNumberInput();
                             resultTemperature = nijimath.KelvinToCelsius(temperature);
                             Console.WriteLine($"{temperature} K ≈ {resultTemperature} °C");
                             break;
                         case 5:    // Kelvin to Fahrenheit
                             Console.Write(kelvinPrompt);
-                            temperature = Convert.ToDouble(Console.ReadLine());
+                            temperature = convenient.ReadFloatingPointNumberInput();
                             resultTemperature = nijimath.KelvinToFahrenheit(temperature);
                             Console.WriteLine($"{temperature} K ≈ {resultTemperature} °F");
                             break;
