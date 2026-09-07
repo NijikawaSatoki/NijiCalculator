@@ -58,6 +58,9 @@ namespace NijiCalculator
             string sendOffMsg = "Have a nice day.";
             // Start!
             Console.Write($"{TITLE}{AUTHOR}");
+            char shallIContinue = ' ';
+            do
+            {
             // Decisions...
             Console.WriteLine(welcomeText);
             Console.WriteLine(optionList);
@@ -341,6 +344,9 @@ namespace NijiCalculator
                     break;
                 // End of switch block
             }
+                Console.Write("Continue? [Y/n] ");
+                shallIContinue = comvenient.ReadCharacterInput();
+            } while (shallIContinue == 'N' || shallIContinue == 'n');
             // Sendoff
             Console.WriteLine(sendOffMsg);
             // Exit the program
