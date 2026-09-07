@@ -345,7 +345,7 @@ namespace NijiCalculator
                     // End of switch block
                 }
                 Console.Write("Continue? [Y/n] ");
-                shallIContinue = comvenient.ReadCharacterInput();
+                shallIContinue = convenient.ReadCharacterInput();
             } while (shallIContinue == 'N' || shallIContinue == 'n');
             // Sendoff
             Console.WriteLine(sendOffMsg);
