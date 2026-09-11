@@ -251,7 +251,7 @@ namespace NijiCalculator
                         break;
                     case 14:    // Average
                         // Explain what averaging does
-                        string averageInfo = "\n";
+                        string averageInfo = "Gets the average (mean) of all numbers in a given set/list.\n";
                         Console.WriteLine(averageInfo);
                         // Prompt the user to input the number
                         List<double> numberArray = new List<double>();
