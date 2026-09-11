@@ -153,7 +153,7 @@ namespace NijiCalculator
                         break;
                     case 6:     // Exponentiation
                         // Explain what exponentiation
-                        string exponentiationInfo = "\n";
+                        string exponentiationInfo = "Raises a number to another. This is a compact way of multiplying a number by itself multiple times.\n";
                         Console.WriteLine(exponentiationInfo);
                         // Prompt the user to input the numbers
                         Console.Write(enterNumberPrompt0);
