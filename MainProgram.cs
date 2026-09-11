@@ -167,7 +167,7 @@ namespace NijiCalculator
                         break;
                     case 7:     // Square roots
                         // Explain what square roots do
-                        string squareRootInfo = "\n";
+                        string squareRootInfo = "Calculates what number, when squared, will output the given number.\n";
                         Console.WriteLine(squareRootInfo);
                         // Prompt the user to input the number
                         Console.Write(enterNumberPrompt0);
