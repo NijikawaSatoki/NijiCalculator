@@ -46,9 +46,35 @@ namespace NijiCalculator
                 { 12, "Base 2 Log" },
                 { 13, "Base 10 Log" },
                 { 14, "Average" },
-                { 15, "Temperature" }
+                { 15, "Temperature" },
+                { 16, "Bit shift left" },
+                { 17, "Bit shift right" },
+                { 18, "Bitwise NOT" },
+                { 19, "Bitwise AND" },
+                { 20, "Bitwise OR" },
+                { 21, "Bitwise XOR" },
+                { 22, "" },
+                { 23, "" },
+                { 24, "" },
+                { 25, "" },
+                { 26, "" },
+                { 27, "" },
+                { 28, "" },
+                { 29, "" },
+                { 30, "" },
+                { 31, "" }
             };
-            string optionList = $" 0. {options[0]}\t 1. {options[1]}\t 2. {options[2]}\n 3. {options[3]}\t 4. {options[4]}\t 5. {options[5]}\n 6. {options[6]}\t 7. {options[7]}\t 8. {options[8]}\n 9. {options[9]}\t10. {options[10]}\t11. {options[11]}\n12. {options[12]}\t13. {options[13]}\t14. {options[14]}\n15. {options[15]}";
+            /*
+             0. Addition     1. Subtraction      2. Multiplication
+             3. Division     4. Modulus          5. Summation
+             6. Exponent     7. Square root      8. Sine
+             9. Cosine      10. Tangent         11. Natural Log
+            12. Base 2 Log  13. Base 10 Log     14. Temperature
+            15. Temperature 16. Bit shift left  17. Bit shift right
+            18. Bitwise NOT 19. Bitwise AND     20. Bitwise OR
+            21. Bitwise XOR
+            */
+            string optionList = $" 0. {options[0]}\t 1. {options[1]}\t 2. {options[2]}\n 3. {options[3]}\t 4. {options[4]}\t 5. {options[5]}\n 6. {options[6]}\t 7. {options[7]}\t 8. {options[8]}\n 9. {options[9]}\t10. {options[10]}\t11. {options[11]}\n12. {options[12]}\t13. {options[13]}\t14. {options[14]}\n15. {options[15]}\t16. {options[16]}\t17. {options[17]}\n18. {options[18]}\t19. {options[19]}\t20. {options[20]}\n21. {options[21]}";
             string welcomeText = "Welcome!";
             string decisionPrompt = "What do you want to do? (Type the number!) ";
             string enterNumberPrompt0 = "Enter a number: ";
@@ -66,6 +92,8 @@ namespace NijiCalculator
                 Console.WriteLine(optionList);
                 Console.Write(decisionPrompt);
                 int choice = convenient.Read32BitNumberInput();
+                // Set up some prompt strings.
+                string bitShiftPrompt = "Please enter the amount of bits to shift by: ";
                 // Execute
                 switch (choice)
                 {
@@ -162,7 +190,7 @@ namespace NijiCalculator
                         double exponentY = convenient.ReadFloatingPointNumberInput();
                         // Calculate the exponent and print the result
                         double exponentResult = nijimath.Exponentiation(exponentX, exponentY);
-                        string equationExponent = $"{exponentX}^{exponentY} = {exponentResult}";
+                        string equationExponent = $"{exponentX} raised to the power of {exponentY} = {exponentResult}";
                         Console.WriteLine(equationExponent);
                         break;
                     case 7:     // Square roots
@@ -338,6 +366,130 @@ namespace NijiCalculator
                             // End of switch block
                         }
                         break;
+                    case 16:    // Bit shift left
+                        // Explain what shifting a bit to the left does
+                        string bitShiftLeftInfo = "Takes a number and shifts its value left by the specified number of bits.\n";
+                        Console.WriteLine(bitShiftLeftInfo);
+                        // Prompt the user to input the numbers
+                        Console.Write(enterNumberPrompt0);
+                        uint bitShiftLeftX = convenient.ReadUnsigned32BitNumberInput();
+                        Console.Write(bitShiftPrompt);
+                        int bitShiftLeftY = convenient.Read32BitNumberInput();
+                        // Calculate and print the result
+                        uint bitShiftLeftResult = nijimath.BitShiftLeft(bitShiftLeftX, bitShiftLeftY);
+                        string equationBitShiftLeft = $"{bitShiftLeftX} << {bitShiftLeftY} = {bitShiftLeftResult}";
+                        string bitViewBitShiftLeft = $"Binary: %{Convert.ToString(bitShiftLeftX, toBase: 2).PadLeft(32, '0'),32}\n      = %{Convert.ToString(bitShiftLeftResult, toBase: 2).PadLeft(32, '0'),32}";
+                        Console.WriteLine(equationBitShiftLeft);
+                        Console.WriteLine(bitViewBitShiftLeft);
+                        break;
+                    case 17:    // Bit shift right
+                        // Explain what shifting a bit to the right does
+                        string bitShiftRightInfo = "Takes a number and shifts its value right by the specified number of bits.\n";
+                        Console.WriteLine(bitShiftRightInfo);
+                        // Prompt the user to input the numbers
+                        Console.Write(enterNumberPrompt0);
+                        uint bitShiftRightX = convenient.ReadUnsigned32BitNumberInput();
+                        Console.Write(bitShiftPrompt);
+                        int bitShiftRightY = convenient.Read32BitNumberInput();
+                        // Calculate and print the result
+                        uint bitShiftRightResult = nijimath.BitShiftLeft(bitShiftRightX, bitShiftRightY);
+                        string equationBitShiftRight = $"{bitShiftRightX} >> {bitShiftRightY} = {bitShiftRightResult}";
+                        string bitViewBitShiftRight = $"Binary:\n  %{Convert.ToString(bitShiftRightX, toBase: 2).PadLeft(32, '0'), 32}\n= %{Convert.ToString(bitShiftRightResult, toBase: 2).PadLeft(32, '0'),32}";
+                        Console.WriteLine(equationBitShiftRight);
+                        Console.WriteLine(bitViewBitShiftRight);
+                        break;
+                    case 18:    // Bitwise NOT
+                        // Explain what bitwise NOT does
+                        string bitwiseNOTInfo = "A NOT operation takes all the bits that represent a number and flips them, such that 0's become 1's and vice versa.\n";
+                        Console.WriteLine(bitwiseNOTInfo);
+                        // Prompt the user to input the number
+                        Console.Write(enterNumberPrompt0);
+                        uint bitwiseNOTOpX = convenient.ReadUnsigned32BitNumberInput();
+                        // Calculate and print the result
+                        uint bitwiseNOTOpResult = nijimath.BitwiseNOT(bitwiseNOTOpX);
+                        string equationBitwiseNOT = $"NOT {bitwiseNOTOpX} = {bitwiseNOTOpResult}";
+                        string bitviewBitwiseNOT = $"Binary:\nNOT %{Convert.ToString(bitwiseNOTOpX, toBase: 2).PadLeft(32, '0'), 32}\n  = %{Convert.ToString(bitwiseNOTOpResult, toBase: 2).PadLeft(32, '0'), 32}";
+                        Console.WriteLine(equationBitwiseNOT);
+                        Console.WriteLine(bitviewBitwiseNOT);
+                        break;
+                    case 19:    // Bitwise AND
+                        // Explain what bitwise AND does
+                        string bitwiseANDInfo = "\n";
+                        Console.WriteLine(bitwiseANDInfo);
+                        // Prompt the user to input the numbers
+                        Console.Write(enterNumberPrompt0);
+                        uint bitwiseANDOpX = convenient.ReadUnsigned32BitNumberInput();
+                        Console.Write(enterNumberPrompt1);
+                        int bitwiseANDOpY = convenient.Read32BitNumberInput();
+                        // Calculate and print the result
+                        uint bitwiseANDOpResult = nijimath.BitwiseAND(bitwiseANDOpX, bitwiseANDOpY);
+                        string equationBitwiseAND = $"{bitwiseANDOpX} AND {bitwiseANDOpY} = {bitwiseANDOpResult}";
+                        string bitviewBitwiseAND = $"Binary:\n    %{Convert.ToString(bitwiseANDOpX, toBase: 2).PadLeft(32, '0'),32}\nAND %{Convert.ToString(bitwiseANDOpY, toBase: 2).PadLeft(32, '0'),32}\n  = %{Convert.ToString(bitwiseANDOpResult, toBase: 2).PadLeft(32, '0'),32}";
+                        Console.WriteLine(equationBitwiseAND);
+                        Console.WriteLine(bitviewBitwiseAND);
+                        break;
+                    case 20:    // Bitwise OR
+                        // Explain what bitwise OR does
+                        string bitwiseORInfo = "\n";
+                        Console.WriteLine(bitwiseORInfo);
+                        // Prompt the user to input the numbers
+                        Console.Write(enterNumberPrompt0);
+                        uint bitwiseOROpX = convenient.ReadUnsigned32BitNumberInput();
+                        Console.Write(enterNumberPrompt1);
+                        int bitwiseOROpY = convenient.Read32BitNumberInput();
+                        // Calculate and print the result
+                        uint bitwiseOROpResult = nijimath.BitwiseOR(bitwiseOROpX, bitwiseOROpY);
+                        string equationBitwiseOR = $"{bitwiseOROpX} OR {bitwiseOROpY} = {bitwiseOROpResult}";
+                        string bitviewBitwiseOR = $"Binary:\n    %{Convert.ToString(bitwiseOROpX, toBase: 2).PadLeft(32, '0'),32}\n OR %{Convert.ToString(bitwiseOROpY, toBase: 2).PadLeft(32, '0'),32}\n  = %{Convert.ToString(bitwiseOROpResult, toBase: 2).PadLeft(32, '0'),32}";
+                        Console.WriteLine(equationBitwiseOR);
+                        Console.WriteLine(bitviewBitwiseOR);
+                        break;
+                    case 21:    // Bitwise XOR
+                        // Explain what bitwise exclusive OR (XOR) does
+                        string bitwiseXORInfo = "\n";
+                        Console.WriteLine(bitwiseXORInfo);
+                        // Prompt the user to input the numbers
+                        Console.Write(enterNumberPrompt0);
+                        uint bitwiseXOROpX = convenient.ReadUnsigned32BitNumberInput();
+                        Console.Write(enterNumberPrompt1);
+                        int bitwiseXOROpY = convenient.Read32BitNumberInput();
+                        // Calculate and print the result
+                        uint bitwiseXOROpResult = nijimath.BitwiseXOR(bitwiseXOROpX, bitwiseXOROpY);
+                        string equationBitwiseXOR = $"{bitwiseXOROpX} XOR {bitwiseXOROpY} = {bitwiseXOROpResult}";
+                        string bitviewBitwiseXOR = $"Binary:\n    %{Convert.ToString(bitwiseXOROpX, toBase: 2).PadLeft(32, '0'),32}\nXOR %{Convert.ToString(bitwiseXOROpY, toBase: 2).PadLeft(32, '0'),32}\n  = %{Convert.ToString(bitwiseXOROpResult, toBase: 2).PadLeft(32, '0'),32}";
+                        Console.WriteLine(equationBitwiseXOR);
+                        Console.WriteLine(bitviewBitwiseXOR);
+                        break;
+                    case 22:    // 
+                        Console.WriteLine(convenient.NotImplemented);
+                        break;
+                    case 23:    // 
+                        Console.WriteLine(convenient.NotImplemented);
+                        break;
+                    case 24:    // 
+                        Console.WriteLine(convenient.NotImplemented);
+                        break;
+                    case 25:    // 
+                        Console.WriteLine(convenient.NotImplemented);
+                        break;
+                    case 26:    // 
+                        Console.WriteLine(convenient.NotImplemented);
+                        break;
+                    case 27:    // 
+                        Console.WriteLine(convenient.NotImplemented);
+                        break;
+                    case 28:    // 
+                        Console.WriteLine(convenient.NotImplemented);
+                        break;
+                    case 29:    // 
+                        Console.WriteLine(convenient.NotImplemented);
+                        break;
+                    case 30:    // 
+                        Console.WriteLine(convenient.NotImplemented);
+                        break;
+                    case 31:    // 
+                        Console.WriteLine(convenient.NotImplemented);
+                        break;
                     default:    // Out of bounds
                         Console.WriteLine(outOfBoundsMsg0);
                         Console.WriteLine(outOfBoundsMsg1);
@@ -346,7 +498,7 @@ namespace NijiCalculator
                 }
                 Console.Write("Continue? [Y/n] ");
                 shallIContinue = convenient.ReadCharacterInput();
-            } while (shallIContinue == 'N' || shallIContinue == 'n');
+            } while (shallIContinue != 'N' || shallIContinue != 'n');
             // Sendoff
             Console.WriteLine(sendOffMsg);
             // Exit the program

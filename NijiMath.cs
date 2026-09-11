@@ -16,6 +16,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Formats.Asn1;
 
 namespace NijiCalculator
 {
@@ -71,6 +72,42 @@ namespace NijiCalculator
         {
             double sqRoot = Math.Sqrt(square);
             return sqRoot;
+        }
+        // Bitwise functions (these always assume that you're working with 32-bit numbers!)
+        public uint BitwiseNOT(uint number)
+        {
+            uint @byte = ~number;
+            return @byte;
+        }
+        public uint BitShiftLeft(uint number, int shiftCount)
+        {
+            // Note that if `shiftCount` is >= 31, then the value will be a guaranteed 0!
+            uint @byte = number << shiftCount;
+            return @byte;
+        }
+        public uint BitShiftRight(uint number, int shiftCount)
+        {
+            // Note that if `shiftCount` is >= 31, then the value will be a guaranteed 0!
+            uint @byte = number >> shiftCount;
+            return @byte;
+        }
+        public uint BitwiseAND(uint number, int mask)
+        {
+            uint uintMask = (uint)mask;
+            uint @byte = number & uintMask;
+            return @byte;
+        }
+        public uint BitwiseOR(uint number, int mask)
+        {
+            uint uintMask = (uint)mask;
+            uint @byte = number | uintMask;
+            return @byte;
+        }
+        public uint BitwiseXOR(uint number, int mask)
+        {
+            uint uintMask = (uint)mask;
+            uint @byte = number ^ uintMask;
+            return @byte;
         }
         // Trigonometric functions
         public double TrigSine(double angle)
