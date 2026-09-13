@@ -2,53 +2,7 @@
 
 This will tell you what you need to build this.
 
-## Mono
-
-`mono` should be straightforward to compile with.
-
-### Installing `mono`
-
-For Arch users:
-
-```
-sudo pacman -S mono mono-tools
-```
-
-For Termux users:
-
-```
-pkg install mono mono-libs mono-static
-```
-
-For MSYS2 users:
-
-```
-pacman -S mingw-w64-x86_64-mono mingw-w64-x86_64-mono-basic
-```
-
-### Running `mono`'s compiler
-
-Now for the actual building part!
-
-To compile the calculator, just run this:
-
-```
-mcs MainProgram.cs NijiMath.cs -out:release/NijiCalculator
-```
-
-Windows users may have to change `-out:release/NijiCalculator` to `-out:release/NijiCalculator.exe`.
-
-Alternatively, you could just run the `build-en-mono-linux` script (if you're on Linux or are using Termux on Android) or `build-en-mono-win64` script (if you're on Windows using MSYS2).
-
-**NOTE:** `mono` will no longer work with this project due to using functionality from after the last version of .NET that `mono` supports.
-As such, please disregard the build instruction using `mono`.
-Use the instructions for .NET instead, detailed below!
-
-## .NET
-
-This is the current way to compile.
-
-### Installing .NET
+## Installing .NET
 
 For Arch users:
 
@@ -61,4 +15,4 @@ Just make sure that you add the directory to `$PATH`.
 
 ### Running the .NET compiler
 
-Not gonna tell you the full command for this... just use the `build-en-dotnet-linux-x64` script (if you're on Linux) or `build-en-dotnet-win64-*` script (where `*` is the architecture of your system (`x86` for x86, `x64` for x86_64, and `arm64` for ARM), if you're on Windows using MSYS2).
+Not gonna tell you the full command for this... just use the `build-linux-x64` script (if you're on Linux) or `build-win64-*` script (where `*` is the architecture of your system (`x86` for x86, `x64` for x86_64, and `arm64` for ARM), if you're on Windows using MSYS2).
