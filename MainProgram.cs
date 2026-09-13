@@ -65,16 +65,16 @@ namespace NijiCalculator
                 { 31, "" }
             };
             /*
-             0. Addition     1. Subtraction      2. Multiplication
-             3. Division     4. Modulus          5. Summation
-             6. Exponent     7. Square root      8. Sine
-             9. Cosine      10. Tangent         11. Natural Log
-            12. Base 2 Log  13. Base 10 Log     14. Temperature
-            15. Temperature 16. Bit shift left  17. Bit shift right
-            18. Bitwise NOT 19. Bitwise AND     20. Bitwise OR
+             0. Addition     1. Subtraction          2. Multiplication
+             3. Division     4. Modulus              5. Summation
+             6. Exponent     7. Square root          8. Sine
+             9. Cosine      10. Tangent             11. Natural Log
+            12. Base 2 Log  13. Base 10 Log         14. Temperature
+            15. Temperature 16. Bit shift left      17. Bit shift right
+            18. Bitwise NOT 19. Bitwise AND         20. Bitwise OR
             21. Bitwise XOR
             */
-            string optionList = $" 0. {options[0]}\t 1. {options[1]}\t 2. {options[2]}\n 3. {options[3]}\t 4. {options[4]}\t 5. {options[5]}\n 6. {options[6]}\t 7. {options[7]}\t 8. {options[8]}\n 9. {options[9]}\t10. {options[10]}\t11. {options[11]}\n12. {options[12]}\t13. {options[13]}\t14. {options[14]}\n15. {options[15]}\t16. {options[16]}\t17. {options[17]}\n18. {options[18]}\t19. {options[19]}\t20. {options[20]}\n21. {options[21]}";
+            string optionList = $" 0. {options[0]}\t 1. {options[1]}\t 2. {options[2]}\n 3. {options[3]}\t 4. {options[4]}\t 5. {options[5]}\n 6. {options[6]}\t 7. {options[7]}\t 8. {options[8]}\n 9. {options[9]}\t10. {options[10]}\t11. {options[11]}\n12. {options[12]}\t13. {options[13]}\t14. {options[14]}\n15. {options[15]}\t16. {options[16]}\t\t17. {options[17]}\n18. {options[18]}\t19. {options[19]}\t20. {options[20]}\n21. {options[21]}";
             string welcomeText = "Welcome!";
             string decisionPrompt = "What do you want to do? (Type the number!) ";
             string enterNumberPrompt0 = "Enter a number: ";
