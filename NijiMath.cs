@@ -125,6 +125,21 @@ namespace NijiCalculator
             double tangent = Math.Tan(angle);
             return tangent;
         }
+        public double HypberbolicSine(double angle)
+        {
+            double hyperSine = Math.Sinh(angle);
+            return hyperSine;
+        }
+        public double HypberbolicCosine(double angle)
+        {
+            double hyperCosine = Math.Cosh(angle);
+            return hyperCosine;
+        }
+        public double HypberbolicTangent(double angle)
+        {
+            double hyperTangent = Math.Tanh(angle);
+            return hyperTangent;
+        }
         // Logarithmic functions
         public double NaturalLogarithm(double x)
         {
