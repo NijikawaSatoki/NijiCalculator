@@ -23,8 +23,8 @@ namespace NijiCalculator
     class NijiMath
     {
         // Error message(s)
-        private string _errorDivideByZeroMsg = "Error!\nYou can't divide by 0!";
-        private string _errorArrayLengthZeroMsg = "Error!\nThe length of the array is 0!\nYou can't divide by 0!";
+        private readonly string _errorDivideByZeroMsg = "Error!\nYou can't divide by 0!";
+        private readonly string _errorArrayLengthZeroMsg = "Error!\nThe length of the array is 0!\nYou can't divide by 0!";
         // Basic operations
         public int Addition(int x, int y)
         {
