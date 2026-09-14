@@ -66,14 +66,14 @@ namespace NijiCalculator
                 { 31, "LOREM IPSUM" }
             };
             /*
-             0. Addition     1. Subtraction          2. Multiplication
-             3. Division     4. Modulus              5. Summation
-             6. Exponent     7. Square root          8. Sine
-             9. Cosine      10. Tangent             11. Natural Log
-            12. Base 2 Log  13. Base 10 Log         14. Temperature
-            15. Temperature 16. Bit shift left      17. Bit shift right
-            18. Bitwise NOT 19. Bitwise AND         20. Bitwise OR
-            21. Bitwise XOR 22. Hyperbolic Sine     23. Hyperbolic Cosine
+             0. Addition             1. Subtraction          2. Multiplication
+             3. Division             4. Modulus              5. Summation
+             6. Exponent             7. Square root          8. Sine
+             9. Cosine              10. Tangent             11. Natural Log
+            12. Base 2 Log          13. Base 10 Log         14. Average
+            15. Temperature         16. Bit shift left      17. Bit shift right
+            18. Bitwise NOT         19. Bitwise AND         20. Bitwise OR
+            21. Bitwise XOR         22. Hyperbolic Sine     23. Hyperbolic Cosine
             24. Hyperbolic Tangent
             255. Exit the program
             */
