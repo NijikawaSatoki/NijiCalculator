@@ -54,9 +54,9 @@ namespace NijiCalculator
                 { 19, "Bitwise AND" },
                 { 20, "Bitwise OR" },
                 { 21, "Bitwise XOR" },
-                { 22, "LOREM IPSUM" },
-                { 23, "LOREM IPSUM" },
-                { 24, "LOREM IPSUM" },
+                { 22, "Hyperbolic Sine" },
+                { 23, "Hyperbolic Cosine" },
+                { 24, "Hyperbolic Tangent" },
                 { 25, "LOREM IPSUM" },
                 { 26, "LOREM IPSUM" },
                 { 27, "LOREM IPSUM" },
@@ -73,9 +73,11 @@ namespace NijiCalculator
             12. Base 2 Log  13. Base 10 Log         14. Temperature
             15. Temperature 16. Bit shift left      17. Bit shift right
             18. Bitwise NOT 19. Bitwise AND         20. Bitwise OR
-            21. Bitwise XOR
+            21. Bitwise XOR 22. Hyperbolic Sine     23. Hyperbolic Cosine
+            24. Hyperbolic Tangent
+            255. Exit the program
             */
-            string optionList = $" 0. {options[0]}\t 1. {options[1]}\t\t 2. {options[2]}\n 3. {options[3]}\t 4. {options[4]}\t\t 5. {options[5]}\n 6. {options[6]}\t 7. {options[7]}\t\t 8. {options[8]}\n 9. {options[9]}\t10. {options[10]}\t\t11. {options[11]}\n12. {options[12]}\t13. {options[13]}\t\t14. {options[14]}\n15. {options[15]}\t16. {options[16]}\t17. {options[17]}\n18. {options[18]}\t19. {options[19]}\t\t20. {options[20]}\n21. {options[21]}\n255. Exit the program";
+            string optionList = $" 0. {options[0]}\t\t 1. {options[1]}\t\t 2. {options[2]}\n 3. {options[3]}\t\t 4. {options[4]}\t\t 5. {options[5]}\n 6. {options[6]}\t\t 7. {options[7]}\t\t 8. {options[8]}\n 9. {options[9]}\t\t10. {options[10]}\t\t11. {options[11]}\n12. {options[12]}\t\t13. {options[13]}\t\t14. {options[14]}\n15. {options[15]}\t\t16. {options[16]}\t17. {options[17]}\n18. {options[18]}\t\t19. {options[19]}\t\t20. {options[20]}\n21. {options[21]}\t\t22. {options[22]}\t23. {options[23]}\n24. {options[24]}\n255. Exit the program";
             string welcomeText = "Welcome!";
             string decisionPrompt = "What do you want to do? (Type the number!) ";
             string enterNumberPrompt0 = "Enter a number: ";
@@ -461,14 +463,41 @@ namespace NijiCalculator
                         Console.WriteLine(equationBitwiseXOR);
                         Console.WriteLine(bitviewBitwiseXOR);
                         break;
-                    case 22:    // 
-                        Console.WriteLine(convenient.NotImplemented);
+                    case 22:    // Hyperbolic Sine
+                        // Explain what hyperbolic sine does (I won't because I'm bad at trigonometry :p)
+                        string hyperSineInfo = "\n";
+                        Console.WriteLine(hyperSineInfo);
+                        // Prompt the user to input the angle
+                        Console.Write(enterNumberPrompt0);
+                        double hyperSineX = convenient.ReadFloatingPointNumberInput();
+                        // Calculate the sine and print the result
+                        double hyperSineResult = nijimath.HypberbolicSine(hyperSineX);
+                        string equationHyperSine = $"sinh {hyperSineX}° = {hyperSineResult}";
+                        Console.WriteLine(equationHyperSine);
                         break;
-                    case 23:    // 
-                        Console.WriteLine(convenient.NotImplemented);
+                    case 23:    // Hyperbolic Cosine
+                        // Explain what hyperbolic cosine does (I won't because I'm bad at trigonometry :p)
+                        string hyperCosineInfo = "\n";
+                        Console.WriteLine(hyperCosineInfo);
+                        // Prompt the user to input the angle
+                        Console.Write(enterNumberPrompt0);
+                        double hyperCosineX = convenient.ReadFloatingPointNumberInput();
+                        // Calculate the sine and print the result
+                        double hyperCosineResult = nijimath.HypberbolicCosine(hyperCosineX);
+                        string equationHyperCosine = $"cosh {hyperCosineX}° = {hyperCosineResult}";
+                        Console.WriteLine(equationHyperCosine);
                         break;
-                    case 24:    // 
-                        Console.WriteLine(convenient.NotImplemented);
+                    case 24:    // Hyperbolic Tangent
+                        // Explain what hyperbolic tangent does (I won't because I'm bad at trigonometry :p)
+                        string hyperTangentInfo = "\n";
+                        Console.WriteLine(hyperTangentInfo);
+                        // Prompt the user to input the angle
+                        Console.Write(enterNumberPrompt0);
+                        double hyperTangentX = convenient.ReadFloatingPointNumberInput();
+                        // Calculate the sine and print the result
+                        double hyperTangentResult = nijimath.HypberbolicTangent(hyperTangentX);
+                        string equationHyperTangent = $"tanh {hyperTangentX}° = {hyperTangentResult}";
+                        Console.WriteLine(equationHyperTangent);
                         break;
                     case 25:    // 
                         Console.WriteLine(convenient.NotImplemented);
