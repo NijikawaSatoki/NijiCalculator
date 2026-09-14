@@ -502,8 +502,8 @@ namespace NijiCalculator
                 Console.Write("Continue? [Y/n] ");
                 shallIContinue = convenient.ReadCharacterInput();
             } while (shallIContinue == 'Y' || shallIContinue == 'y');
-            // Sendoff
             ExitMessage:
+            // Sendoff
             Console.WriteLine(sendOffMsg);
             // Exit the program
             return 0;
