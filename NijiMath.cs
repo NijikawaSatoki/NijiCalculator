@@ -110,17 +110,17 @@ namespace NijiCalculator
             return @byte;
         }
         // Trigonometric functions
-        public double TrigSine(double angle)
+        public double Sine(double angle)
         {
             double sine = Math.Sin(angle);
             return sine;
         }
-        public double TrigCosine(double angle)
+        public double Cosine(double angle)
         {
             double cosine = Math.Cos(angle);
             return cosine;
         }
-        public double TrigTangent(double angle)
+        public double Tangent(double angle)
         {
             double tangent = Math.Tan(angle);
             return tangent;

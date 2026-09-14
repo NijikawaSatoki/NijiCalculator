@@ -214,7 +214,7 @@ namespace NijiCalculator
                         Console.Write(enterNumberPrompt0);
                         double sineX = convenient.ReadFloatingPointNumberInput();
                         // Calculate the sine and print the result
-                        double sineResult = nijimath.TrigSine(sineX);
+                        double sineResult = nijimath.Sine(sineX);
                         string equationSine = $"sin {sineX}° = {sineResult}";
                         Console.WriteLine(equationSine);
                         break;
@@ -226,7 +226,7 @@ namespace NijiCalculator
                         Console.Write(enterNumberPrompt0);
                         double cosineX = convenient.ReadFloatingPointNumberInput();
                         // Calculate the cosine and print the result
-                        double cosineResult = nijimath.TrigCosine(cosineX);
+                        double cosineResult = nijimath.Cosine(cosineX);
                         string equationCosine = $"cos {cosineX}° = {cosineResult}";
                         Console.WriteLine(equationCosine);
                         break;
@@ -238,7 +238,7 @@ namespace NijiCalculator
                         Console.Write(enterNumberPrompt0);
                         double tangentX = convenient.ReadFloatingPointNumberInput();
                         // Calculate the tangent and print the result
-                        double tangentResult = nijimath.TrigTangent(tangentX);
+                        double tangentResult = nijimath.Tangent(tangentX);
                         string equationTangent = $"tan {tangentX}° = {tangentResult}";
                         Console.WriteLine(equationTangent);
                         break;
