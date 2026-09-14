@@ -54,16 +54,16 @@ namespace NijiCalculator
                 { 19, "Bitwise AND" },
                 { 20, "Bitwise OR" },
                 { 21, "Bitwise XOR" },
-                { 22, "" },
-                { 23, "" },
-                { 24, "" },
-                { 25, "" },
-                { 26, "" },
-                { 27, "" },
-                { 28, "" },
-                { 29, "" },
-                { 30, "" },
-                { 31, "" }
+                { 22, "LOREM IPSUM" },
+                { 23, "LOREM IPSUM" },
+                { 24, "LOREM IPSUM" },
+                { 25, "LOREM IPSUM" },
+                { 26, "LOREM IPSUM" },
+                { 27, "LOREM IPSUM" },
+                { 28, "LOREM IPSUM" },
+                { 29, "LOREM IPSUM" },
+                { 30, "LOREM IPSUM" },
+                { 31, "LOREM IPSUM" }
             };
             /*
              0. Addition     1. Subtraction          2. Multiplication
