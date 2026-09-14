@@ -88,10 +88,10 @@ namespace NijiCalculator
             // Start!
             Console.Write($"{TITLE}{AUTHOR}");
             char shallIContinue = ' ';
+            Console.WriteLine(welcomeText);
             do
             {
                 // Decisions...
-                Console.WriteLine(welcomeText);
                 Console.WriteLine(optionList);
                 Console.Write(decisionPrompt);
                 int choice = convenient.Read32BitNumberInput();
