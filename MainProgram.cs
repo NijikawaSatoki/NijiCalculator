@@ -501,12 +501,7 @@ namespace NijiCalculator
                 }
                 Console.Write("Continue? [Y/n] ");
                 shallIContinue = convenient.ReadCharacterInput();
-<<<<<<< HEAD
             } while (shallIContinue == 'Y' || shallIContinue == 'y');
-=======
-            } while (shallIContinue == 'Y' || shallIContinue == 'y');
-            ExitMessage:
->>>>>>> 2618b8f (Some fixes and a way to exit the calculator at the options prompt)
             // Sendoff
             ExitMessage:
             Console.WriteLine(sendOffMsg);
