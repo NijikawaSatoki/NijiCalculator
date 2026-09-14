@@ -75,7 +75,7 @@ namespace NijiCalculator
             18. Bitwise NOT 19. Bitwise AND         20. Bitwise OR
             21. Bitwise XOR
             */
-            string optionList = $" 0. {options[0]}\t 1. {options[1]}\t 2. {options[2]}\n 3. {options[3]}\t 4. {options[4]}\t 5. {options[5]}\n 6. {options[6]}\t 7. {options[7]}\t 8. {options[8]}\n 9. {options[9]}\t10. {options[10]}\t11. {options[11]}\n12. {options[12]}\t13. {options[13]}\t14. {options[14]}\n15. {options[15]}\t16. {options[16]}\t\t17. {options[17]}\n18. {options[18]}\t19. {options[19]}\t20. {options[20]}\n21. {options[21]}";
+            string optionList = $" 0. {options[0]}\t 1. {options[1]}\t\t 2. {options[2]}\n 3. {options[3]}\t 4. {options[4]}\t\t 5. {options[5]}\n 6. {options[6]}\t 7. {options[7]}\t\t 8. {options[8]}\n 9. {options[9]}\t10. {options[10]}\t\t11. {options[11]}\n12. {options[12]}\t13. {options[13]}\t\t14. {options[14]}\n15. {options[15]}\t16. {options[16]}\t17. {options[17]}\n18. {options[18]}\t19. {options[19]}\t\t20. {options[20]}\n21. {options[21]}\n255. Exit the program";
             string welcomeText = "Welcome!";
             string decisionPrompt = "What do you want to do? (Type the number!) ";
             string enterNumberPrompt0 = "Enter a number: ";
@@ -491,6 +491,8 @@ namespace NijiCalculator
                     case 31:    // 
                         Console.WriteLine(convenient.NotImplemented);
                         break;
+                    case 255:   // Exit
+                        goto ExitMessage;
                     default:    // Out of bounds
                         Console.WriteLine(outOfBoundsMsg0);
                         Console.WriteLine(outOfBoundsMsg1);
@@ -499,8 +501,9 @@ namespace NijiCalculator
                 }
                 Console.Write("Continue? [Y/n] ");
                 shallIContinue = convenient.ReadCharacterInput();
-            } while (shallIContinue != 'N' || shallIContinue != 'n');
+            } while (shallIContinue == 'Y' || shallIContinue == 'y');
             // Sendoff
+            ExitMessage:
             Console.WriteLine(sendOffMsg);
             // Exit the program
             return 0;
